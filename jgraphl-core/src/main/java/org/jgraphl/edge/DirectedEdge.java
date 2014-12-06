@@ -1,4 +1,4 @@
-package org.jgraph.edge;
+package org.jgraphl.edge;
 
 
 public class DirectedEdge<V> implements Edge<V> {

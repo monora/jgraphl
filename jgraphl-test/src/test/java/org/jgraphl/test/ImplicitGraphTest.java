@@ -1,4 +1,4 @@
-package org.jgraph;
+package org.jgraphl.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.jgraphl.Graph;
+import org.jgraphl.Graphs;
 import org.junit.Before;
 import org.junit.Test;
 

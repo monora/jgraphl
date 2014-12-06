@@ -1,4 +1,4 @@
-package org.jgraph.edge;
+package org.jgraphl.edge;
 
 public interface Edge<V> {
 

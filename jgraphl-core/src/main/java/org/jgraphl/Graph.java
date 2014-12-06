@@ -1,7 +1,7 @@
 /**
  *
  */
-package org.jgraph;
+package org.jgraphl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import org.jgraph.edge.DirectedEdge;
-import org.jgraph.edge.Edge;
-import org.jgraph.edge.UndirectedEdge;
+import org.jgraphl.edge.DirectedEdge;
+import org.jgraphl.edge.Edge;
+import org.jgraphl.edge.UndirectedEdge;
 
 public interface Graph<V> extends Iterable<V> {
 

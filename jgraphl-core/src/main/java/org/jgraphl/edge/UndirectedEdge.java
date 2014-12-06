@@ -1,4 +1,4 @@
-package org.jgraph.edge;
+package org.jgraphl.edge;
 
 
 public class UndirectedEdge<V> extends DirectedEdge<V> {

@@ -1,4 +1,4 @@
-package org.jgraph;
+package org.jgraphl;
 
 import java.util.Iterator;
 import java.util.function.Consumer;
@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-import org.jgraph.edge.Edge;
+import org.jgraphl.edge.Edge;
 
 public class ImplicitGraph<V> implements Graph<V> {
 

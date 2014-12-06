@@ -1,4 +1,4 @@
-package org.jgraph;
+package org.jgraphl;
 
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -9,7 +9,7 @@ public final class Graphs {
 		throw new Error("no instances");
 	}
 
-	static final class Examples {
+	static public final class Examples {
 
 		public static ImplicitGraph<Integer> cycle(int n) {
 			Supplier<Stream<Integer>> x = () -> Stream.iterate(0,
