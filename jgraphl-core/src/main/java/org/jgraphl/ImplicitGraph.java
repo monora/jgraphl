@@ -6,6 +6,7 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+import org.jgraphl.ImplicitGraph.Builder;
 import org.jgraphl.edge.Edge;
 
 public class ImplicitGraph<V> implements Graph<V> {
@@ -69,8 +70,13 @@ public class ImplicitGraph<V> implements Graph<V> {
 			return this;
 		}
 
-		public ImplicitGraph<W> build() {
+		public Graph<W> build() {
 			return new ImplicitGraph<W>(it, neighborIterator, isDirected);
+		}
+
+		public Builder<W> directed(boolean b) {
+			isDirected = b;
+			return this;
 		}
 
 	}

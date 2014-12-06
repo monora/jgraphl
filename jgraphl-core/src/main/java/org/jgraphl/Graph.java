@@ -33,7 +33,7 @@ public interface Graph<V> extends Iterable<V> {
 			forEachVertex(v -> forEachAdjacentVertex(v,
 					u -> action.accept(v, u)));
 		} else {
-			// TODO forEachAdjacentVertexForUndirected(u, action);
+			edgeStream().forEach(e -> action.accept(e.source(), e.target()));
 		}
 	}
 
@@ -46,7 +46,7 @@ public interface Graph<V> extends Iterable<V> {
 	}
 
 	Stream<V> streamOfNeighbors(V v);
-	
+
 	default Set<V> vertices() {
 		return stream().collect(Collectors.toSet());
 	}
@@ -69,11 +69,23 @@ public interface Graph<V> extends Iterable<V> {
 	}
 
 	default Stream<Edge<V>> edgeStream() {
-		return stream().flatMap(u -> streamOfNeighbors(u).map(v -> makeEdge(u, v)));
+		Stream<Edge<V>> result = stream().flatMap(u -> streamOfNeighbors(u).map(v -> makeEdge(u, v)));
+		return isDirected()? result : result.distinct();
 	}
 
 	default long size() {
 		return stream().count();
 	}
 
+	default boolean contains(V v) {
+		return stream().anyMatch(u -> u.equals(v));
+	}
+
+	default boolean containsEdge(V u, V v) {
+		return containsEdge(makeEdge(u, v));
+	}
+
+	default boolean containsEdge(Edge<V> edge) {
+		return edgeStream().anyMatch(e -> e.equals(edge));
+	}
 }

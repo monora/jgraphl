@@ -2,13 +2,23 @@ package org.jgraphl.edge;
 
 
 public class DirectedEdge<V> implements Edge<V> {
-	public final V source;
+	protected final V source;
 
-	public final V target;
+	protected final V target;
 
 	public DirectedEdge(V s, V t) {
 		source = s;
 		target = t;
+	}
+
+	@Override
+	public V source() {
+		return source;
+	}
+
+	@Override
+	public V target() {
+		return target;
 	}
 
 	public boolean equals(Object o) {

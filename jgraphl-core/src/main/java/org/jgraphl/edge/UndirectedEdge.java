@@ -12,9 +12,9 @@ public class UndirectedEdge<V> extends DirectedEdge<V> {
 			return true;
 
 		@SuppressWarnings("unchecked")
-		UndirectedEdge<V> otherEdge = (UndirectedEdge<V>) o;
-		return source.equals(otherEdge.target)
-				&& target.equals(otherEdge.source);
+		Edge<V> otherEdge = (Edge<V>) o;
+		return source().equals(otherEdge.target())
+				&& target().equals(otherEdge.source());
 	}
 
 	public String toString() {
