@@ -40,4 +40,12 @@ public class DirectedEdge<V> implements Edge<V> {
 	public String toString() {
 		return "(" + source + "-" + target + ")";
 	}
+
+	public DirectedEdge<V> reverse() {
+		return new DirectedEdge<V>(target, source);
+	}
+
+	public UndirectedEdge<V> toUndirected() {
+		return new UndirectedEdge<V>(target, source);
+	}
 }

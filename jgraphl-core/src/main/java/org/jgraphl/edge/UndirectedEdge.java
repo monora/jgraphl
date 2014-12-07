@@ -11,8 +11,11 @@ public class UndirectedEdge<V> extends DirectedEdge<V> {
 		if (super.equals(o))
 			return true;
 
+		if (!(o instanceof UndirectedEdge<?>))
+			return false;
+		
 		@SuppressWarnings("unchecked")
-		Edge<V> otherEdge = (Edge<V>) o;
+		Edge<V> otherEdge = (UndirectedEdge<V>) o;
 		return source().equals(otherEdge.target())
 				&& target().equals(otherEdge.source());
 	}
