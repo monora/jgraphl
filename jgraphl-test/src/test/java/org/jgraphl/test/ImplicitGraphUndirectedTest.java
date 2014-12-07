@@ -3,14 +3,20 @@ package org.jgraphl.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.CoreMatchers.is;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.hamcrest.core.IsEqual;
 import org.jgraphl.Graph;
 import org.jgraphl.Graphs;
+import org.jgraphl.edge.DefaultDirectedEdge;
+import org.jgraphl.edge.DefaultUndirectedEdge;
 import org.jgraphl.edge.DirectedEdge;
 import org.jgraphl.edge.Edge;
 import org.jgraphl.edge.UndirectedEdge;
@@ -36,7 +42,7 @@ public class ImplicitGraphUndirectedTest {
 
 	@Test
 	public void testNeighbors() {
-		long n = graph.size() - 1;
+		long n = graph.noOfVertices() - 1;
 		for (Integer v : graph) {
 			graph.forEachAdjacentVertex(v,
 					u -> assertTrue("v must not be adjacent to itself", v != u));
@@ -64,35 +70,34 @@ public class ImplicitGraphUndirectedTest {
 		Object object1 = new Object();
 		Object object2 = new Object();
 		List<Object> objectlist = Arrays.asList(object1, object2, 1, "a");
-		Graph<Object> g = Graphs.Examples.complete(objectlist);
-		assertTrue(g.size() == 4);
+		Graph<Object> undirected = Graphs.Examples.complete(objectlist);
+		assertFalse("The complete graph should be undirected",
+				undirected.isDirected());
+		assertThat(undirected.noOfVertices(), is(4L));
+		assertThat(undirected.noOfEdges(), is(6L));
 
-		assertFalse(g.contains(0));
-		assertTrue(g.contains(1));
-		assertTrue(g.contains("a"));
-		assertTrue(g.contains(object1));
-		assertTrue(g.contains(object2));
+		assertFalse(undirected.contains(0));
+		assertTrue(undirected.contains(1));
+		assertTrue(undirected.contains("a"));
+		assertTrue(undirected.contains(object1));
+		assertTrue(undirected.contains(object2));
 
-		assertTrue(g.containsEdge(object1, object2));
-		assertTrue(g.containsEdge(object2, object1));
-		assertTrue(g.containsEdge(object1, 1));
+		assertTrue(undirected.containsEdge(object1, object2));
+		assertTrue(undirected.containsEdge(object2, object1));
+		assertTrue(undirected.containsEdge(object1, 1));
 
-		UndirectedEdge<Object> undirectedEdge = new UndirectedEdge<>("a", 1);
-		assertTrue(g.containsEdge(undirectedEdge));
-		DirectedEdge<Object> directedEdge = new DirectedEdge<>(1, "a");
-		assertTrue(
-				"A directed Edge is considered undirected in an undirected graph",
-				g.containsEdge(directedEdge));
-		assertFalse("a directed Edge can not be equal to a undirected edge",
-				directedEdge.equals(undirectedEdge));
-		assertFalse("a directed Edge can not be equal to a undirected edge",
-				undirectedEdge.equals(directedEdge));
+		UndirectedEdge<Object> undirectedEdge = new DefaultUndirectedEdge<>(
+				"a", 1);
+		assertTrue(undirected.containsEdge(undirectedEdge));
 
-		Edge<Object> makedEdge = g.makeEdge(1, "a");
+		DirectedEdge<Object> directedEdge = new DefaultDirectedEdge<>(1, "a");
+		assertThat("A directed edge is not contained in an undirected graph",
+				not(undirected.containsEdge(directedEdge)));
+
+		Edge<Object> makedEdge = undirected.makeEdge(1, "a");
 		assertEquals("An undirected Graph should make undirected edges",
 				undirectedEdge, makedEdge);
-		assertTrue(g.containsEdge(makedEdge));
-		assertFalse(g.containsEdge(new DirectedEdge<>(1, 2)));
+		assertTrue(undirected.containsEdge(makedEdge));
+		assertFalse(undirected.containsEdge(new DefaultDirectedEdge<>(1, 2)));
 	}
-
 }

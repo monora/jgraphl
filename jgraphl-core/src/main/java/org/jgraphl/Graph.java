@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import org.jgraphl.edge.DirectedEdge;
+import org.jgraphl.edge.DefaultDirectedEdge;
+import org.jgraphl.edge.DefaultUndirectedEdge;
 import org.jgraphl.edge.Edge;
-import org.jgraphl.edge.UndirectedEdge;
 
 public interface Graph<V> extends Iterable<V> {
 
@@ -63,9 +63,9 @@ public interface Graph<V> extends Iterable<V> {
 
 	default Supplier<BiFunction<V,V,Edge<V>>> edgeSupplier() {
 		if (isDirected())
-			return () -> (u,v) -> new DirectedEdge<>(u, v);
+			return () -> (u,v) -> new DefaultDirectedEdge<>(u, v);
 		else
-			return () -> (u,v) -> new UndirectedEdge<>(u, v);
+			return () -> (u,v) -> new DefaultUndirectedEdge<>(u, v);
 	}
 
 	default Stream<Edge<V>> edgeStream() {
@@ -73,7 +73,7 @@ public interface Graph<V> extends Iterable<V> {
 		return isDirected()? result : result.distinct();
 	}
 
-	default long size() {
+	default long noOfVertices() {
 		return stream().count();
 	}
 
@@ -87,5 +87,9 @@ public interface Graph<V> extends Iterable<V> {
 
 	default boolean containsEdge(Edge<V> edge) {
 		return edgeStream().anyMatch(e -> e.equals(edge));
+	}
+
+	default long noOfEdges() {
+		return edgeStream().count();
 	}
 }

@@ -32,7 +32,7 @@ public class ImplicitGraphTest {
 
 	@Test
 	public void testNeighbors() {
-		long n = graph.size();
+		long n = graph.noOfVertices();
 		for (Integer v : graph) {
 			graph.forEachAdjacentVertex(v, u -> assertTrue((v+1)%n == u));
 		}

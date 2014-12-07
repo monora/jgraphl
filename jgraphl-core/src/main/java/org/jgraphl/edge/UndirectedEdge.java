@@ -1,26 +1,14 @@
 package org.jgraphl.edge;
 
+import org.jgraphl.edge.Edge;
 
-public class UndirectedEdge<V> extends DirectedEdge<V> {
+public interface UndirectedEdge<V> extends Edge<V> {
 
-	public UndirectedEdge(V s, V t) {
-		super(s, t);
+	default String toStringDelimiter() {
+		return "=";
 	}
-
-	public boolean equals(Object o) {
-		if (super.equals(o))
-			return true;
-
-		if (!(o instanceof UndirectedEdge<?>))
-			return false;
-		
-		@SuppressWarnings("unchecked")
-		Edge<V> otherEdge = (UndirectedEdge<V>) o;
-		return source().equals(otherEdge.target())
-				&& target().equals(otherEdge.source());
-	}
-
-	public String toString() {
-		return "(" + source + "=" + target + ")";
+	
+	default boolean isDirected() {
+		return false;
 	}
 }
