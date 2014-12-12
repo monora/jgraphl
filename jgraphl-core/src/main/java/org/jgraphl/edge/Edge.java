@@ -17,7 +17,7 @@ public interface Edge<V> {
 					&& target().equals(otherEdge.target());
 			if (isDirected() && otherEdge.isDirected()) {
 				return isTupleEqual;
-			} else if (isUnDirected() && otherEdge.isUnDirected()) {
+			} else if (isUndirected() && otherEdge.isUndirected()) {
 				return isTupleEqual
 						|| (source().equals(otherEdge.target()) && target()
 								.equals(otherEdge.source()));
@@ -26,7 +26,7 @@ public interface Edge<V> {
 		return false;
 	}
 
-	default boolean isUnDirected() {
+	default boolean isUndirected() {
 		return !isDirected();
 	}
 
