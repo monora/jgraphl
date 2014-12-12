@@ -12,14 +12,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.hamcrest.core.IsEqual;
 import org.jgraphl.Graph;
-import org.jgraphl.Graphs;
 import org.jgraphl.edge.DefaultDirectedEdge;
 import org.jgraphl.edge.DefaultUndirectedEdge;
 import org.jgraphl.edge.DirectedEdge;
 import org.jgraphl.edge.Edge;
 import org.jgraphl.edge.UndirectedEdge;
+import org.jgraphl.graph.Graphs;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -94,7 +93,7 @@ public class ImplicitGraphUndirectedTest {
 		assertThat("A directed edge is not contained in an undirected graph",
 				not(undirected.containsEdge(directedEdge)));
 
-		Edge<Object> makedEdge = undirected.makeEdge(1, "a");
+		Edge<Object> makedEdge = undirected.getEdge(1, "a");
 		assertEquals("An undirected Graph should make undirected edges",
 				undirectedEdge, makedEdge);
 		assertTrue(undirected.containsEdge(makedEdge));

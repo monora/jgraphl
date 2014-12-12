@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.jgraphl.Graph;
-import org.jgraphl.Graphs;
+import org.jgraphl.graph.Graphs;
 import org.junit.Before;
 import org.junit.Test;
 
