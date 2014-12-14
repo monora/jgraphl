@@ -1,20 +1,24 @@
 package org.jgraphl.graph;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 import org.jgraphl.Graph;
 import org.jgraphl.edge.Edge;
 
-public class AdjacencyGraph<V> implements Graph<V> {
+public class DirectedAdjacencyGraph<V> implements Graph<V> {
 
-	private final Map<V, Set<V>> adjListMap;
+	protected final Map<V, Collection<V>> adjListMap;
 
-	public AdjacencyGraph(final Map<V, Set<V>> adjListMap) {
+	public DirectedAdjacencyGraph(final Map<V, Collection<V>> adjListMap) {
 		this.adjListMap = adjListMap;
+	}
+
+	public long noOfVertices() {
+		return adjListMap.size();
 	}
 
 	@Override
@@ -41,10 +45,6 @@ public class AdjacencyGraph<V> implements Graph<V> {
 		return getNeighborsOf(v).stream();
 	}
 
-	public long noOfVertices() {
-		return adjListMap.size();
-	}
-
 	public boolean contains(V v) {
 		return adjListMap.containsKey(v);
 	}
@@ -57,7 +57,12 @@ public class AdjacencyGraph<V> implements Graph<V> {
 		return contains(edge.source()) && adjListMap.get(edge.source()).contains(edge.target());
 	}
 
-	private Set<V> getNeighborsOf(V u) {
+	@Override
+	public String toString() {
+		return str();
+	}
+
+	private Collection<V> getNeighborsOf(V u) {
 		return adjListMap.get(u);
 	}
 }

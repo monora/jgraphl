@@ -61,16 +61,17 @@ public interface Graph<V> extends Iterable<V> {
 		return edgeSupplier().get().apply(u, v);
 	}
 
-	default Supplier<BiFunction<V,V,Edge<V>>> edgeSupplier() {
+	default Supplier<BiFunction<V, V, Edge<V>>> edgeSupplier() {
 		if (isDirected())
-			return () -> (u,v) -> new DefaultDirectedEdge<>(u, v);
+			return () -> (u, v) -> new DefaultDirectedEdge<>(u, v);
 		else
-			return () -> (u,v) -> new DefaultUndirectedEdge<>(u, v);
+			return () -> (u, v) -> new DefaultUndirectedEdge<>(u, v);
 	}
 
 	default Stream<Edge<V>> edgeStream() {
-		Stream<Edge<V>> result = stream().flatMap(u -> streamOfNeighbors(u).map(v -> getEdge(u, v)));
-		return isDirected()? result : result.distinct();
+		Stream<Edge<V>> result = stream().flatMap(
+				u -> streamOfNeighbors(u).map(v -> getEdge(u, v)));
+		return isDirected() ? result : result.distinct();
 	}
 
 	default long noOfVertices() {
@@ -91,5 +92,15 @@ public interface Graph<V> extends Iterable<V> {
 
 	default long noOfEdges() {
 		return edgeStream().count();
+	}
+
+	default String str() {
+		return this.getClass().getSimpleName()
+				+ "[V=["
+				+ stream().limit(100).map(v -> v.toString())
+						.collect(Collectors.joining(", "))
+				+ "] E=["
+				+ edgeStream().limit(100).map(v -> v.toString())
+						.collect(Collectors.joining(", ")) + "]]";
 	}
 }

@@ -8,7 +8,6 @@ import java.util.stream.Stream;
 
 import org.jgraphl.Graph;
 import org.jgraphl.edge.Edge;
-import org.jgraphl.graph.ImplicitGraph.Builder;
 
 public class ImplicitGraph<V> implements Graph<V> {
 
@@ -50,6 +49,11 @@ public class ImplicitGraph<V> implements Graph<V> {
 	public void forEachAdjacentEdge(V u, Consumer<? super Edge<V>> action) {
 	}
 
+	@Override
+	public String toString() {
+		return str();
+	}
+	
 	public static final class Builder<W> {
 
 		private Supplier<Stream<W>> it;

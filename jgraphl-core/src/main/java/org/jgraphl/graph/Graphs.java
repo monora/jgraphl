@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
@@ -16,14 +15,23 @@ public final class Graphs {
 		throw new Error("no instances");
 	}
 
-	static public <V> AdjacencyGraph<V> toAdjacenyGraph(Graph<V> graph) {
-		Map<V, Set<V>> adjListMap = new HashMap<V, Set<V>>();
+	static public <V> DirectedAdjacencyGraph<V> toAdjacenyGraph(Graph<V> graph) {
+		return new DirectedAdjacencyGraph<V>(createAdjacenyMap(graph));
+	}
+
+	static public <V> MutableDirectedAdjacencyGraph<V> toMutableAdjacenyGraph(
+			Graph<V> graph) {
+		return new MutableDirectedAdjacencyGraph<V>(createAdjacenyMap(graph));
+	}
+
+	private static <V> Map<V, Collection<V>> createAdjacenyMap(Graph<V> graph) {
+		Map<V, Collection<V>> adjListMap = new HashMap<V, Collection<V>>();
 		for (V u : graph) {
 			HashSet<V> adjList = new HashSet<V>();
 			adjListMap.put(u, adjList);
 			graph.forEachAdjacentVertex(u, v -> adjList.add(v));
 		}
-		return new AdjacencyGraph<V>(adjListMap);
+		return adjListMap;
 	}
 
 	static public final class Examples {

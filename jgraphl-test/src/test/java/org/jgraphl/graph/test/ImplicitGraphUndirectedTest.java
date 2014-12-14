@@ -1,4 +1,4 @@
-package org.jgraphl.test;
+package org.jgraphl.graph.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

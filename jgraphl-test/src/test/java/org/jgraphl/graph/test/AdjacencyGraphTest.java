@@ -1,4 +1,4 @@
-package org.jgraphl.graph;
+package org.jgraphl.graph.test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertFalse;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import org.jgraphl.Graph;
 import org.jgraphl.edge.Edge;
+import org.jgraphl.graph.Graphs;
 import org.junit.Before;
 import org.junit.Test;
 
