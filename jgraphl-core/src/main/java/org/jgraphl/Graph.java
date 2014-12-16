@@ -103,4 +103,8 @@ public interface Graph<V> extends Iterable<V> {
 				+ edgeStream().limit(100).map(v -> v.toString())
 						.collect(Collectors.joining(", ")) + "]]";
 	}
+	
+	default String sortedEdgeStreamToString() {
+		return edgeStream().map(Object::toString).sorted().collect(Collectors.joining(","));
+	}
 }

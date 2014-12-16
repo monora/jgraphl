@@ -7,8 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.jgraphl.Graph;
+import org.jgraphl.edge.Edge;
 import org.jgraphl.graph.Graphs;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,13 +42,17 @@ public class ImplicitGraphTest {
 
 	@Test
 	public void testEdgeStream() {
-		String edges = graph.edgeStream().map(Object::toString).sorted().collect(Collectors.joining(","));
-		assertEquals("(0-1),(1-2),(2-3),(3-0)", edges);
+		Stream<Edge<Integer>> edgeStream = graph.edgeStream();
+		assertEquals("(0-1),(1-2),(2-3),(3-0)", streamToString(edgeStream));
 	}
 
 	@Test
 	public void testForEachEdge() {
-		String edges = graph.edges().stream().map(Object::toString).sorted().collect(Collectors.joining(","));
-		assertEquals("(0-1),(1-2),(2-3),(3-0)", edges);
+		Stream<Edge<Integer>> streamOfEdges = graph.edges().stream();
+		assertEquals("(0-1),(1-2),(2-3),(3-0)", streamToString(streamOfEdges));
+	}
+
+	private String streamToString(Stream<Edge<Integer>> streamOfEdges) {
+		return streamOfEdges.map(Object::toString).sorted().collect(Collectors.joining(","));
 	}
 }

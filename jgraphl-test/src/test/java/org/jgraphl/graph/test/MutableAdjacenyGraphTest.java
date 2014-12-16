@@ -1,7 +1,5 @@
 package org.jgraphl.graph.test;
 
-import static org.hamcrest.CoreMatchers.hasItem;
-import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -98,4 +96,11 @@ public class MutableAdjacenyGraphTest {
 		assertThat("Vertex 0 should be an isolated vertex now", graphUnderTest.contains(0), is(true));
 		assertThat("Vertex 0 should be an isolated vertex now", graphUnderTest.streamOfNeighbors(0).count(), is(0L));
 	}
+	
+	@Test
+	public void testPartite() {
+		MutableGraph<String> partite = Graphs.Examples.partite(2, 3);
+		assertThat(partite.sortedEdgeStreamToString(), is("(a1-b1),(a1-b2),(a1-b3),(a2-b1),(a2-b2),(a2-b3)"));
+	}
+	
 }

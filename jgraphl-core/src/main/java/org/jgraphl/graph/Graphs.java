@@ -8,6 +8,7 @@ import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import org.jgraphl.Graph;
+import org.jgraphl.MutableGraph;
 
 public final class Graphs {
 
@@ -21,7 +22,8 @@ public final class Graphs {
 
 	static public <V> MutableDirectedAdjacencyGraph<V> toMutableAdjacenyGraph(
 			Graph<V> graph) {
-		return new MutableDirectedAdjacencyGraph<V>(createAdjacenyMap(graph));
+		return new MutableDirectedAdjacencyGraph<V>(createAdjacenyMap(graph),
+				() -> new HashSet<V>());
 	}
 
 	private static <V> Map<V, Collection<V>> createAdjacenyMap(Graph<V> graph) {
@@ -54,6 +56,18 @@ public final class Graphs {
 					.vertexIterator(() -> col.stream())
 					.neighborIterator(v -> col.stream().filter(u -> u != v))
 					.directed(false).build();
+		}
+
+		public static MutableGraph<String> partite(int n, int m) {
+
+			Map<String, Collection<String>> adjListMap = new HashMap<String, Collection<String>>();
+			MutableGraph<String> graph = new MutableDirectedAdjacencyGraph<String>(
+					adjListMap);
+			for (int i = 1; i <= n; i++)
+				for (int j = 1; j <= m; j++) {
+					graph.addEdge("a" + i, "b" + j);
+				}
+			return graph;
 		}
 	}
 }
