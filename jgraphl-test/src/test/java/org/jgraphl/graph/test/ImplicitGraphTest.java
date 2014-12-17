@@ -26,6 +26,11 @@ public class ImplicitGraphTest {
 	}
 
 	@Test
+	public void testToString() {
+		assertEquals("ImplicitGraph[V=[0, 1, 2, 3] E=[(0-1), (1-2), (2-3), (3-0)]]", graph.toString());
+	}
+
+	@Test
 	public void testForEachVertex() {
 		Set<Integer> vertices = graph.vertices();
 		assertEquals(vertexlist.size(), vertices.size());

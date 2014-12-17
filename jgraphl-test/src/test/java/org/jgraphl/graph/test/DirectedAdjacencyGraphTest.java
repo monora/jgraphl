@@ -13,7 +13,7 @@ import org.jgraphl.graph.Graphs;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AdjacencyGraphTest {
+public class DirectedAdjacencyGraphTest {
 
 	private Graph<Integer> graphUnderTest;
 	private Graph<Integer> cycle;
@@ -21,7 +21,7 @@ public class AdjacencyGraphTest {
 	@Before
 	public void setUp() {
 		cycle = Graphs.Examples.cycle(4);
-		graphUnderTest = Graphs.toAdjacenyGraph(cycle);
+		graphUnderTest = Graphs.toDirectedAdjacenyGraph(cycle);
 	}
 
 	@Test
@@ -31,9 +31,12 @@ public class AdjacencyGraphTest {
 		assertTrue(graphUnderTest.containsEdge(1, 2));
 		assertTrue(graphUnderTest.containsEdge(2, 3));
 		assertTrue(graphUnderTest.containsEdge(3, 0));
+		assertTrue(graphUnderTest.containsEdge(graphUnderTest.getEdge(3, 0)));
 	
 		assertFalse(graphUnderTest.contains(10));
+		assertFalse(graphUnderTest.containsEdge(1,0));
 		assertFalse(graphUnderTest.containsEdge(0,5));
+		assertFalse(graphUnderTest.containsEdge(graphUnderTest.getEdge(0, 3)));
 	}
 
 	@Test

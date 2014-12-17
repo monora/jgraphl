@@ -16,17 +16,23 @@ public final class Graphs {
 		throw new Error("no instances");
 	}
 
-	static public <V> DirectedAdjacencyGraph<V> toAdjacenyGraph(Graph<V> graph) {
-		return new DirectedAdjacencyGraph<V>(createAdjacenyMap(graph));
+	static public <V> AbstractAdjacencyGraph<V> toDirectedAdjacenyGraph(Graph<V> graph) {
+		return new DirectedAdjacencyGraph<V>(createAdjacencyMap(graph));
 	}
 
-	static public <V> MutableDirectedAdjacencyGraph<V> toMutableAdjacenyGraph(
+	public static <V> UndirectedAdjacencyGraph<V> toUndirectedAdjacenyGraph(Graph<V> other) {
+		Map<V, Collection<V>> adjacencyMap = createAdjacencyMap(other);
+		other.forEachEdge((u,v) -> adjacencyMap.get(v).add(u));
+		return new UndirectedAdjacencyGraph<V>(adjacencyMap);
+	}
+
+	static public <V> MutableDirectedAdjacencyGraph<V> toMutableDirectedAdjacenyGraph(
 			Graph<V> graph) {
-		return new MutableDirectedAdjacencyGraph<V>(createAdjacenyMap(graph),
+		return new MutableDirectedAdjacencyGraph<V>(createAdjacencyMap(graph),
 				() -> new HashSet<V>());
 	}
 
-	private static <V> Map<V, Collection<V>> createAdjacenyMap(Graph<V> graph) {
+	private static <V> Map<V, Collection<V>> createAdjacencyMap(Graph<V> graph) {
 		Map<V, Collection<V>> adjListMap = new HashMap<V, Collection<V>>();
 		for (V u : graph) {
 			HashSet<V> adjList = new HashSet<V>();

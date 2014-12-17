@@ -19,7 +19,7 @@ public class MutableAdjacenyGraphTest {
 		// ImplicitGraph[(0-1), (1-2), (2-3), (3-0)]
 		cycle = Graphs.Examples.cycle(4);
 		// MutableAdjacenyGraph[(0-1), (1-2), (2-3), (3-0)]
-		graphUnderTest = Graphs.toMutableAdjacenyGraph(cycle);
+		graphUnderTest = Graphs.toMutableDirectedAdjacenyGraph(cycle);
 	}
 
 	@Test
