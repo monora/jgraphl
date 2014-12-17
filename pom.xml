@@ -9,7 +9,7 @@
 	<name>Java Graph Library</name>
 	<description>A Java class library for graph data structures and algorithms.</description>
 
-	<url>http://github.org/monora/jgraph</url>
+	<url>http://github.org/monora/jgraphl</url>
 	<licenses>
 		<license>
 			<name>GNU Lesser General Public License Version 2.1, February 1999</name>
@@ -23,9 +23,9 @@
 		</license>
 	</licenses>
 	<scm>
-		<url>https://github.com/monora/jgraph.git</url>
-		<connection>scm:git:https://github.com/monora/jgraph.git</connection>
-		<developerConnection>scm:git:git@github.com:monora/jgraph.git</developerConnection>
+		<url>https://github.com/monora/jgraphl.git</url>
+		<connection>scm:git:https://github.com/monora/jgraphl.git</connection>
+		<developerConnection>scm:git:git@github.com:monora/jgraphl.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 	<developers>
@@ -37,7 +37,7 @@
 	</developers>
 
 	<issueManagement>
-		<url>https://github.com/monora/jgraph/issues</url>
+		<url>https://github.com/monora/jgraphl/issues</url>
 	</issueManagement>
 
 	<properties>
@@ -134,4 +134,7 @@
 
 	<profiles>
 	</profiles>
+	<ciManagement>
+		<url>https://travis-ci.org/monora/jgraphl</url>
+	</ciManagement>
 </project>
