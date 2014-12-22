@@ -40,7 +40,7 @@ public class DotTest {
 		StringWriter writer = new StringWriter();
 		ExportFormat.writeOn(writer, partite, true, partiteDotFactory());
 		assertThat(writer.toString(),
-				equalTo("digraph {\n\tn0 -> n1\n\tn0 -> n2\n\tn0 -> n3\n\tn4 -> n1\n\tn4 -> n2\n\tn4 -> n3\n}"));
+				equalTo("digraph {\n\ta1 -> b2\n\ta1 -> b3\n\ta1 -> b1\n\ta2 -> b2\n\ta2 -> b3\n\ta2 -> b1\n}"));
 	}
 
 	/**
