@@ -19,8 +19,16 @@ public class Dot<V> extends ExportFormat<V> {
 	private final IndentedWriter writer;
 
 	public static <V> Factory<V> factory() {
+		return factory(null);
+	}
+
+	public static <V> Factory<V> factory(LabelProvider<V> labelProvider) {
 		return (Graph<V> graph, Writer writer, boolean needsVertexEquality) -> {
-			return new Dot<V>(graph, new IndentedWriter(writer), needsVertexEquality);
+			Dot<V> dot = new Dot<>(graph, new IndentedWriter(writer), needsVertexEquality);
+			if (labelProvider != null) {
+				dot.setLabelProvider(labelProvider);
+			}
+			return dot;
 		};
 	}
 
@@ -43,9 +51,9 @@ public class Dot<V> extends ExportFormat<V> {
 
 	private void writeEdge(Edge<V> edge) {
 		writer.cr()//
-				.append(getVertexId(edge.source()))//
+				.append(getLabel(edge.source()))//
 				.append(edge.isDirected() ? " -> " : " -- ")//
-				.append(getVertexId(edge.target()));
+				.append(getLabel(edge.target()));
 	}
 
 }

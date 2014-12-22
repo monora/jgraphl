@@ -31,12 +31,18 @@ public abstract class ExportFormat<V> {
 
 	protected Graph<V> graph;
 
+	protected LabelProvider<V> labelProvider = (V vertex) -> getVertexId(vertex);
+
 	private Map<V, String> vertexIdentifiers;
 
 	@FunctionalInterface
 	public static interface Factory<V> {
-
 		ExportFormat<V> create(Graph<V> graph, Writer writer, boolean needsVertexEquality);
+	}
+
+	@FunctionalInterface
+	public static interface LabelProvider<V> {
+		String getLabel(V vertex);
 	}
 
 	/**
@@ -86,11 +92,19 @@ public abstract class ExportFormat<V> {
 		this.vertexIdentifiers = needsVertexEquality ? new HashMap<>() : new IdentityHashMap<>();
 	}
 
+	public void setLabelProvider(LabelProvider<V> labelProvider) {
+		this.labelProvider = labelProvider;
+	}
+
 	public abstract void export();
 
 	protected String getVertexId(V vertex) {
 		return vertexIdentifiers.computeIfAbsent(vertex, v -> {
 			return "n" + vertexIdentifiers.size();
 		});
+	}
+
+	protected String getLabel(V vertex) {
+		return labelProvider.getLabel(vertex);
 	}
 }

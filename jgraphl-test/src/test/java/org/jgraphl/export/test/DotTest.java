@@ -21,6 +21,10 @@ import org.junit.Test;
  *
  */
 public class DotTest {
+	
+	protected static ExportFormat.Factory<String> partiteDotFactory() {
+		return Dot.factory((String vertex) -> { return vertex; });
+	}
 
 	@Test
 	public void testCycle() throws IOException {
@@ -34,7 +38,7 @@ public class DotTest {
 	public void testPartite() throws IOException {
 		Graph<String> partite = Graphs.Examples.partite(2, 3);
 		StringWriter writer = new StringWriter();
-		ExportFormat.writeOn(writer, partite, true, Dot.factory());
+		ExportFormat.writeOn(writer, partite, true, partiteDotFactory());
 		assertThat(writer.toString(),
 				equalTo("digraph {\n\tn0 -> n1\n\tn0 -> n2\n\tn0 -> n3\n\tn4 -> n1\n\tn4 -> n2\n\tn4 -> n3\n}"));
 	}
@@ -42,6 +46,8 @@ public class DotTest {
 	/**
 	 * Creates files for several example graphs in DOT format in the directory
 	 * export/dot/.
+	 * <p>
+	 * Run <code>dot -Tsvg file.dot > file.svg</code> to convert a dot file to SVG.
 	 * 
 	 * @param args
 	 * @throws IOException
@@ -49,7 +55,7 @@ public class DotTest {
 	public static void main(String[] args) throws IOException {
 		Files.createDirectories(Paths.get("export/dot"));
 		ExportFormat.writeFile("export/dot/cycle.dot", Graphs.Examples.cycle(10), false, Dot.factory());
-		ExportFormat.writeFile("export/dot/partite.dot", Graphs.Examples.partite(3, 5), true, Dot.factory());
+		ExportFormat.writeFile("export/dot/partite.dot", Graphs.Examples.partite(3, 5), true, partiteDotFactory());
 	}
 
 }
