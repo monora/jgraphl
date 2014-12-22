@@ -45,15 +45,16 @@ public class GraphMLTest {
 
 	/**
 	 * Creates files for several example graphs in GraphML format in the
-	 * directory export/graphml/.
+	 * directory target/export/graphml/.
 	 * 
 	 * @param args
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		Files.createDirectories(Paths.get("export/graphml"));
-		ExportFormat.writeFile("export/graphml/cycle.graphml", Graphs.Examples.cycle(10), false, Dot.factory());
-		ExportFormat.writeFile("export/graphml/partite.graphml", Graphs.Examples.partite(3, 5), true,
+		String exportDir = "target/export/graphml/";
+		Files.createDirectories(Paths.get(exportDir));
+		ExportFormat.writeFile(exportDir+"cycle.graphml", Graphs.Examples.cycle(10), false, Dot.factory());
+		ExportFormat.writeFile(exportDir+"partite.graphml", Graphs.Examples.partite(3, 5), true,
 				Dot.factory());
 	}
 

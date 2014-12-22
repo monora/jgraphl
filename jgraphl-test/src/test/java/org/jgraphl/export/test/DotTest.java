@@ -45,7 +45,7 @@ public class DotTest {
 
 	/**
 	 * Creates files for several example graphs in DOT format in the directory
-	 * export/dot/.
+	 * target/export/dot/.
 	 * <p>
 	 * Run <code>dot -Tsvg file.dot > file.svg</code> to convert a dot file to SVG.
 	 * 
@@ -53,9 +53,11 @@ public class DotTest {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		Files.createDirectories(Paths.get("export/dot"));
-		ExportFormat.writeFile("export/dot/cycle.dot", Graphs.Examples.cycle(10), false, Dot.factory());
-		ExportFormat.writeFile("export/dot/partite.dot", Graphs.Examples.partite(3, 5), true, partiteDotFactory());
+		String exportDir = "target/export/dot/";
+		Files.createDirectories(Paths.get(exportDir));
+		ExportFormat.writeFile(exportDir+"cycle.dot", Graphs.Examples.cycle(10), false, Dot.factory());
+		ExportFormat.writeFile(exportDir+"partite.dot", Graphs.Examples.partite(3, 5), true,
+				partiteDotFactory());
 	}
 
 }
