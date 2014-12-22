@@ -99,7 +99,7 @@ public class MutableAdjacenyGraphTest {
 	
 	@Test
 	public void testPartite() {
-		MutableGraph<String> partite = Graphs.Examples.partite(2, 3);
+		Graph<String> partite = Graphs.Examples.partite(2, 3);
 		assertThat(partite.sortedEdgeStreamToString(), is("(a1-b1),(a1-b2),(a1-b3),(a2-b1),(a2-b2),(a2-b3)"));
 	}
 	
