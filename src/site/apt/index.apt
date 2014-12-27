@@ -1,0 +1,13 @@
+About Java Graph Library
+
+  This project contains two sub projects:
+
+    [jgraphl-core] This is the graph library which you can add as a dependency to your project.
+
+    [jgraphl-test] This project contains junit tests and examples for the library.
+
+Getting started
+
+Motivation for jgraphl
+
+Project license

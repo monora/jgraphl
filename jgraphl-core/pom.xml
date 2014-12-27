@@ -18,4 +18,5 @@
 	    <artifactId>junit</artifactId>
 	</dependency>
     </dependencies>
+    <name>Java Graph Library Core</name>
 </project>
