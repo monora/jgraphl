@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/monora/jgraph.png)](https://travis-ci.org/monora/jgraph)
+[![Build Status](https://travis-ci.org/monora/jgraphl.png)](https://travis-ci.org/monora/jgraphl)
 
 # jgraphl - Java Graph Library
 
@@ -9,3 +9,8 @@ The design is influenced by these two Ruby and Java graph libraries:
 
 * <https://github.com/monora/rgl>
 * <https://github.com/jgrapht/jgrapht>
+
+## Documentation
+
+* [JGraphL Maven Site](http://monora.github.io/jgraphl)
+* [Java Doc](http://monora.github.io/jgraphl/jgraphl-core/apidocs)
