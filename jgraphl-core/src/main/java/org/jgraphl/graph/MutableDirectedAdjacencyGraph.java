@@ -2,6 +2,7 @@ package org.jgraphl.graph;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -21,6 +22,10 @@ public class MutableDirectedAdjacencyGraph<V> extends DirectedAdjacencyGraph<V>
 
 	public MutableDirectedAdjacencyGraph(Map<V, Collection<V>> adjListMap) {
 		this(adjListMap, () -> new HashSet<V>());
+	}
+
+	public MutableDirectedAdjacencyGraph() {
+		this(new HashMap<V,Collection<V>>());
 	}
 
 	@Override

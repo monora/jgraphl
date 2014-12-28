@@ -9,7 +9,7 @@ import org.jgraphl.graph.Graphs;
 import org.junit.Before;
 import org.junit.Test;
 
-public class MutableAdjacenyGraphTest {
+public class MutableDirectedAdjacencyGraphTest {
 
 	private Graph<Integer> cycle;
 	private MutableGraph<Integer> graphUnderTest;
@@ -19,7 +19,7 @@ public class MutableAdjacenyGraphTest {
 		// ImplicitGraph[(0-1), (1-2), (2-3), (3-0)]
 		cycle = Graphs.Examples.cycle(4);
 		// MutableAdjacenyGraph[(0-1), (1-2), (2-3), (3-0)]
-		graphUnderTest = Graphs.toMutableDirectedAdjacenyGraph(cycle);
+		graphUnderTest = Graphs.toMutableDirectedAdjacencyGraph(cycle);
 	}
 
 	@Test
@@ -101,6 +101,14 @@ public class MutableAdjacenyGraphTest {
 	public void testPartite() {
 		Graph<String> partite = Graphs.Examples.partite(2, 3);
 		assertThat(partite.sortedEdgeStreamToString(), is("(a1-b1),(a1-b2),(a1-b3),(a2-b1),(a2-b2),(a2-b3)"));
+	}
+	
+	@Test
+	public void testDirectedAdjacency() {
+		Graph<Integer> adj = Graphs.asDirectedAdjacencyGraph(1,2 ,2,3 ,2,4, 4,5, 6,4, 1,6);
+		assertThat(adj.noOfVertices(), is(6L));
+		assertThat(adj.noOfEdges(), is(6L));
+		assertThat(adj.sortedEdgeStreamToString(), is("(1-2),(1-6),(2-3),(2-4),(4-5),(6-4)"));
 	}
 	
 }

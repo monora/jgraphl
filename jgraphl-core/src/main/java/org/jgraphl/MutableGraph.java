@@ -2,6 +2,14 @@ package org.jgraphl;
 
 import org.jgraphl.edge.Edge;
 
+/**
+ * A MutableGraph can be changed via the addition or removal of edges and
+ * vertices.
+ * 
+ * @author hd
+ *
+ * @param <V>
+ */
 public interface MutableGraph<V> extends Graph<V> {
 	public MutableGraph<V> addVertex(V v);
 

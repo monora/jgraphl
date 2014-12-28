@@ -3,9 +3,11 @@ package org.jgraphl.graph;
 import java.util.Collection;
 import java.util.Map;
 
-public class DirectedAdjacencyGraph<V> extends AbstractAdjacencyGraph<V> {
+import org.jgraphl.DirectedGraph;
 
-	public DirectedAdjacencyGraph(final Map<V, Collection<V>> adjListMap) {
+public class DirectedAdjacencyGraph<V> extends AbstractAdjacencyGraph<V> implements DirectedGraph<V> {
+
+	public DirectedAdjacencyGraph(Map<V, Collection<V>> adjListMap) {
 		super(adjListMap);
 	}
 }

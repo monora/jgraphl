@@ -9,7 +9,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import org.jgraphl.Graph;
-import org.jgraphl.MutableGraph;
 import org.jgraphl.export.ExportFormat;
 import org.jgraphl.export.ExportFormat.Factory;
 import org.jgraphl.export.dot.Dot;
@@ -69,6 +68,10 @@ public class DotTest {
 
 		exportAndCallDotty(exportDir + "partite.dot", Graphs.Examples.partite(3, 5),
 				partiteDotFactory(), true);
+
+		exportAndCallDotty(exportDir + "adj.dot", Graphs.asDirectedAdjacencyGraph(1,2 ,2,3 ,2,4, 4,5, 6,4, 1,6),
+				Dot.factory(), false);
+		
 	}
 
 	private static <V> void exportAndCallDotty(String exportFileName, Graph<V> g,

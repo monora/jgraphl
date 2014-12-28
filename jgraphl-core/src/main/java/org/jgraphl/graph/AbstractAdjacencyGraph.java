@@ -1,6 +1,7 @@
 package org.jgraphl.graph;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -15,6 +16,10 @@ public abstract class AbstractAdjacencyGraph<V> implements Graph<V> {
 
 	protected AbstractAdjacencyGraph(final Map<V, Collection<V>> adjListMap) {
 		this.adjListMap = adjListMap;
+	}
+	
+	public AbstractAdjacencyGraph() {
+		this(new HashMap<V, Collection<V>>());
 	}
 	
 	public long noOfVertices() {

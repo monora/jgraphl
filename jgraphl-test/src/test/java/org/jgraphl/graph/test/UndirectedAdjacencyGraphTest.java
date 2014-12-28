@@ -23,7 +23,7 @@ public class UndirectedAdjacencyGraphTest {
 	@Before
 	public void setUp() {
 		cycle = Graphs.Examples.cycle(4);
-		graphUnderTest = Graphs.toUndirectedAdjacenyGraph(cycle);
+		graphUnderTest = Graphs.toUndirectedAdjacencyGraph(cycle);
 	}
 
 	@Test
@@ -69,5 +69,19 @@ public class UndirectedAdjacencyGraphTest {
 		assertThat(edges.size(), is(2));
 		assertThat(edges.contains(graphUnderTest.getEdge(1, 2)), is(true));
 		assertThat(edges.contains(graphUnderTest.getEdge(3, 2)), is(true));
+	}
+	
+	@Test
+	public void testUndirectedAdjacency() {
+		Graph<Integer> adj = Graphs.asUndirectedAdjacencyGraph(1,2 ,2,3 ,2,4, 4,5, 6,4, 1,6);
+		assertThat(adj.noOfVertices(), is(6L));
+		assertThat(adj.noOfEdges(), is(6L));
+		assertThat(adj.sortedEdgeStreamToString(), is("(1=2),(1=6),(2=3),(2=4),(4=5),(4=6)"));
+	}
+
+	@Test
+	public void testPartite() {
+		Graph<String> partite = Graphs.toUndirectedAdjacencyGraph(Graphs.Examples.partite(2, 2));
+		assertThat(partite.sortedEdgeStreamToString(), is("(a1=b1),(a2=b1),(b2=a1),(b2=a2)"));
 	}
 }

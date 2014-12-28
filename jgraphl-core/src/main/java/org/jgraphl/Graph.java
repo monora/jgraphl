@@ -37,9 +37,7 @@ public interface Graph<V> extends Iterable<V> {
 		}
 	}
 
-	default boolean isDirected() {
-		return true;
-	}
+	boolean isDirected();
 
 	default Stream<V> stream() {
 		return StreamSupport.stream(spliterator(), false);
