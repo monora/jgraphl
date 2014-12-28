@@ -1,220 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	       xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	  <modelVersion>4.0.0</modelVersion>
-	  <parent>
-		    <groupId>org.sonatype.oss</groupId>
-		    <artifactId>oss-parent</artifactId>
-		    <version>9</version>
-	  </parent>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>9</version>
+	</parent>
 
-	  <groupId>org.jgraphl</groupId>
-	  <artifactId>jgraphl-parent</artifactId>
-	  <version>0.0.1-SNAPSHOT</version>
-	  <name>Java Graph Library Parent</name>
-	  <description>A Java class library for graph data structures and algorithms.</description>
-	  <packaging>pom</packaging>
+	<groupId>org.jgraphl</groupId>
+	<artifactId>jgraphl-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Java Graph Library Parent</name>
+	<description>A Java class library for graph data structures and algorithms.</description>
+	<packaging>pom</packaging>
 
-	  <url>http://github.org/monora/jgraphl</url>
+	<url>http://github.org/monora/jgraphl</url>
 
-	  <licenses>
-		    <license>
-			      <name>GNU Lesser General Public License Version 2.1, February 1999</name>
-			      <url>http://jgrapht.sourceforge.net/LGPL.html</url>
-			      <distribution>repo</distribution>
-		    </license>
-		    <license>
-			      <name>Eclipse Public License (EPL) 1.0</name>
-			      <url>http://www.eclipse.org/legal/epl-v10.html</url>
-			      <distribution>repo</distribution>
-		    </license>
-	  </licenses>
+	<prerequisites>
+		<maven>3.2.5</maven>
+	</prerequisites>
 
-	  <developers>
-		    <developer>
-			      <name>Horst Duchene</name>
-			      <email>monora@gmail.com</email>
-			      <id>monora</id>
-		    </developer>
-		    <developer>
-			      <name>Thorsten Seitz</name>
-			      <email>thorsten.seitz@gmail.com</email>
-			      <id>trs123</id>
-		    </developer>
-	  </developers>
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License Version 2.1, February 1999</name>
+			<url>http://jgrapht.sourceforge.net/LGPL.html</url>
+			<distribution>repo</distribution>
+		</license>
+		<license>
+			<name>Eclipse Public License (EPL) 1.0</name>
+			<url>http://www.eclipse.org/legal/epl-v10.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-	  <properties>
-		    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		    <java.version>1.8</java.version>
-		    <maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
-	  </properties>
+	<developers>
+		<developer>
+			<name>Horst Duchene</name>
+			<email>monora@gmail.com</email>
+			<id>monora</id>
+		</developer>
+		<developer>
+			<name>Thorsten Seitz</name>
+			<email>thorsten.seitz@gmail.com</email>
+			<id>trs123</id>
+		</developer>
+	</developers>
 
-	  <dependencyManagement>
-		    <dependencies>
-			      <dependency>
-				        <groupId>${project.groupId}</groupId>
-				        <artifactId>jgraphl-core</artifactId>
-				        <version>${project.version}</version>
-			      </dependency>
-			      <dependency>
-				        <groupId>junit</groupId>
-				        <artifactId>junit</artifactId>
-				        <version>4.12-beta-3</version>
-				        <scope>test</scope>
-			      </dependency>
-		    </dependencies>
-	  </dependencyManagement>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
+	</properties>
 
-	  <build>
-		    <pluginManagement>
-			      <plugins>
-				        <plugin>
-					          <groupId>org.apache.maven.plugins</groupId>
-					          <artifactId>maven-compiler-plugin</artifactId>
-					          <version>3.2</version>
-					          <configuration>
-						            <source>${java.version}</source>
-						            <target>${java.version}</target>
-					          </configuration>
-				        </plugin>
-				        <plugin>
-					          <groupId>org.apache.maven.plugins</groupId>
-					          <artifactId>maven-surefire-plugin</artifactId>
-					          <version>2.12</version>
-					          <configuration>
-						            <testFailureIgnore>false</testFailureIgnore>
-					          </configuration>
-				        </plugin>
-				        <plugin>
-					          <groupId>org.apache.maven.plugins</groupId>
-					          <artifactId>maven-release-plugin</artifactId>
-					          <configuration>
-						            <mavenExecutorId>forked-path</mavenExecutorId>
-					          </configuration>
-				        </plugin>
-				        <plugin>
-					          <groupId>org.apache.maven.plugins</groupId>
-					          <artifactId>maven-javadoc-plugin</artifactId>
-					          <version>${maven-javadoc-plugin.version}</version>
-					          <executions>
-						            <execution>
-							              <id>attach-javadocs</id>
-							              <goals>
-								                <goal>jar</goal>
-							              </goals>
-							              <configuration>
-								                <additionalparam>-Xdoclint:none</additionalparam>
-							              </configuration>
-						            </execution>
-					          </executions>
-				        </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.9.2</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-scm-publish-plugin</artifactId>
-                    <version>1.1</version>
-                    <configuration>
-                        <scmBranch>gh-pages</scmBranch>
-                    </configuration>
-                </plugin>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>jgraphl-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12-beta-3</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-				        <plugin>
-					          <groupId>org.apache.maven.plugins</groupId>
-					          <artifactId>maven-site-plugin</artifactId>
-					          <version>3.4</version>
-					          <configuration>
-						            <skipDeploy>true</skipDeploy>
-						            <!-- We are deploying site using scm-publish, not site-deploy... -->
-					          </configuration>
-					          <dependencies>
-						            <dependency>
-							              <groupId>org.apache.maven.doxia</groupId>
-							              <artifactId>doxia-module-markdown</artifactId>
-							              <version>1.5</version>
-						            </dependency>
-					          </dependencies>
-				        </plugin>
-			      </plugins>
-		    </pluginManagement>
-	  </build>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.2</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.12</version>
+					<configuration>
+						<testFailureIgnore>false</testFailureIgnore>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<configuration>
+						<mavenExecutorId>forked-path</mavenExecutorId>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${maven-javadoc-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+							<configuration>
+								<additionalparam>-Xdoclint:none</additionalparam>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-plugin</artifactId>
+					<version>1.9.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-publish-plugin</artifactId>
+					<version>1.1</version>
+					<configuration>
+						<scmBranch>gh-pages</scmBranch>
+					</configuration>
+				</plugin>
 
-	  <modules>
-		    <module>jgraphl-core</module>
-		    <module>jgraphl-test</module>
-	  </modules>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.4</version>
+					<configuration>
+						<skipDeploy>true</skipDeploy>
+						<!-- We are deploying site using scm-publish, not site-deploy... -->
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.doxia</groupId>
+							<artifactId>doxia-module-markdown</artifactId>
+							<version>1.5</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
-	  <reporting>
-		    <plugins>
-			      <plugin>
-				        <groupId>org.apache.maven.plugins</groupId>
-				        <artifactId>maven-javadoc-plugin</artifactId>
-				        <version>${maven-javadoc-plugin.version}</version>
-				        <configuration>
-					          <doctitle>API for ${project.name} (${project.version})</doctitle>
-					          <windowtitle>API for ${project.name} (${project.version})</windowtitle>
-					          <show>public</show>
-					          <quiet>true</quiet>
-				        </configuration>
-				        <reportSets>
-					          <reportSet>
-						            <id>javadoc</id>
-						            <reports>
-							              <report>javadoc</report>
-						            </reports>
-					          </reportSet>
-				        </reportSets>
-			      </plugin>
-			      <plugin>
-				        <groupId>org.apache.maven.plugins</groupId>
-				        <artifactId>maven-project-info-reports-plugin</artifactId>
-				        <version>2.7</version>
-			      </plugin>
-			      <plugin>
-				        <groupId>org.codehaus.mojo</groupId>
-				        <artifactId>versions-maven-plugin</artifactId>
-				        <version>2.1</version>
-			      </plugin>
-		    </plugins>
-	  </reporting>
+	<modules>
+		<module>jgraphl-core</module>
+		<module>jgraphl-test</module>
+	</modules>
 
-	  <profiles>
-	  </profiles>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.version}</version>
+				<configuration>
+					<doctitle>API for ${project.name} (${project.version})</doctitle>
+					<windowtitle>API for ${project.name} (${project.version})</windowtitle>
+					<show>public</show>
+					<quiet>true</quiet>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<id>javadoc</id>
+						<reports>
+							<report>javadoc</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
+		</plugins>
+	</reporting>
 
-	  <scm>
-		    <url>https://github.com/monora/jgraphl.git</url>
-		    <connection>scm:git:https://github.com/monora/jgraphl.git</connection>
-		    <developerConnection>scm:git:git@github.com:monora/jgraphl.git</developerConnection>
-		    <tag>HEAD</tag>
-	  </scm>
+	<profiles>
+	</profiles>
 
-	  <issueManagement>
-		    <url>https://github.com/monora/jgraphl/issues</url>
-		    <system>GitHub</system>
-	  </issueManagement>
+	<scm>
+		<url>https://github.com/monora/jgraphl.git</url>
+		<connection>scm:git:https://github.com/monora/jgraphl.git</connection>
+		<developerConnection>scm:git:git@github.com:monora/jgraphl.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 
-	  <ciManagement>
-		    <system>Travis CI</system>
-		    <url>https://travis-ci.org/monora/jgraphl</url>
-	  </ciManagement>
+	<issueManagement>
+		<url>https://github.com/monora/jgraphl/issues</url>
+		<system>GitHub</system>
+	</issueManagement>
 
-	  <distributionManagement>
-		    <snapshotRepository>
-			      <id>ossrh</id>
-			      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		    </snapshotRepository>
-		    <repository>
-			      <id>ossrh</id>
-			      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		    </repository>
-		    <site>
-			      <id>github.graphl</id>
-			      <url>scm:git:git@github.com:monora/jgraphl.git</url>
-		    </site>
-	  </distributionManagement>
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/monora/jgraphl</url>
+	</ciManagement>
 
-	  <inceptionYear>2014</inceptionYear>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<site>
+			<id>github.graphl</id>
+			<url>scm:git:git@github.com:monora/jgraphl.git</url>
+		</site>
+	</distributionManagement>
+
+	<inceptionYear>2014</inceptionYear>
 </project>
