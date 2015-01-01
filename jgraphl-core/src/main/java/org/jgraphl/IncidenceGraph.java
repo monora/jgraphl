@@ -3,6 +3,7 @@
  */
 package org.jgraphl;
 
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 import org.jgraphl.edge.Edge;
@@ -52,5 +53,19 @@ public interface IncidenceGraph<V> extends Graph<V> {
 	 */
 	default long outDegree(V u) {
 		return outEdges(u).count();
+	}
+
+	/**
+	 * Iterator over out-edges incident to vertex u. The default implementation
+	 * uses the {@link IncidenceGraph#outEdges} stream for iterating.
+	 * Implementing classes should consider implementing this iteration without
+	 * creating the stream object.
+	 * 
+	 * @param u
+	 * @param action
+	 *            to be performed on each incident edge
+	 */
+	default void forEachAdjacentEdge(V u, Consumer<? super Edge<V>> action) {
+		outEdges(u).forEach(action);
 	}
 }

@@ -7,21 +7,21 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
-import org.jgraphl.Graph;
+import org.jgraphl.IncidenceGraph;
 import org.jgraphl.edge.Edge;
 
-public abstract class AbstractAdjacencyGraph<V> implements Graph<V> {
+public abstract class AbstractAdjacencyGraph<V> implements IncidenceGraph<V> {
 
 	protected Map<V, Collection<V>> adjListMap;
 
 	protected AbstractAdjacencyGraph(final Map<V, Collection<V>> adjListMap) {
 		this.adjListMap = adjListMap;
 	}
-	
+
 	public AbstractAdjacencyGraph() {
 		this(new HashMap<V, Collection<V>>());
 	}
-	
+
 	public long noOfVertices() {
 		return adjListMap.size();
 	}
@@ -39,9 +39,23 @@ public abstract class AbstractAdjacencyGraph<V> implements Graph<V> {
 	}
 
 	@Override
+	public Stream<Edge<V>> outEdges(V u) {
+		return adjacentVertices(u).map(v -> getEdge(u, v));
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.jgraphl.IncidenceGraph#forEachAdjacentEdge(java.lang.Object,
+	 * java.util.function.Consumer)
+	 * 
+	 * Do not use default implementation to spare the creation of the outEdges
+	 * stream.
+	 */
+	@Override
 	public void forEachAdjacentEdge(V u, Consumer<? super Edge<V>> action) {
-		for (V neighbor : getNeighborsOf(u)) {
-			action.accept(getEdge(u, neighbor));
+		for (V v : getNeighborsOf(u)) {
+			action.accept(getEdge(u, v));
 		}
 	}
 
@@ -59,7 +73,8 @@ public abstract class AbstractAdjacencyGraph<V> implements Graph<V> {
 	}
 
 	public boolean containsEdge(Edge<V> edge) {
-		return contains(edge.source()) && adjListMap.get(edge.source()).contains(edge.target());
+		return contains(edge.source())
+				&& adjListMap.get(edge.source()).contains(edge.target());
 	}
 
 	@Override

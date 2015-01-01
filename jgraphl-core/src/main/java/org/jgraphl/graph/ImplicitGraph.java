@@ -1,13 +1,11 @@
 package org.jgraphl.graph;
 
 import java.util.Iterator;
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import org.jgraphl.Graph;
-import org.jgraphl.edge.Edge;
 
 public class ImplicitGraph<V> implements Graph<V> {
 
@@ -41,14 +39,10 @@ public class ImplicitGraph<V> implements Graph<V> {
 	}
 
 	@Override
-	public void forEachAdjacentEdge(V u, Consumer<? super Edge<V>> action) {
-	}
-
-	@Override
 	public String toString() {
 		return str();
 	}
-	
+
 	public static final class Builder<W> {
 
 		private Supplier<Stream<W>> it;

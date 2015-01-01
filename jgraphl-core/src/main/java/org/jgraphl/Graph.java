@@ -20,9 +20,10 @@ import org.jgraphl.edge.Edge;
 
 /**
  * 
- * @param <V> type of vertices
+ * @param <V>
+ *            type of vertices
  */
-public interface Graph<V> extends Iterable<V> {
+public interface Graph<V> extends Iterable<V>, AdjacencyGraph<V> {
 
 	default void forEachVertex(Consumer<? super V> action) {
 		forEach(action);
@@ -39,19 +40,6 @@ public interface Graph<V> extends Iterable<V> {
 	default long noOfVertices() {
 		return stream().count();
 	}
-
-	public default void forEachAdjacentVertex(V vertex, Consumer<? super V> action) {
-		adjacentVertices(vertex).forEach(u -> action.accept(u));
-	}
-	
-	/**
-	 * @param v
-	 * @return an iterator providing access to the vertices adjacent to vertex v
-	 *         in the graph.
-	 */
-	Stream<V> adjacentVertices(V v);
-
-	void forEachAdjacentEdge(V u, Consumer<? super Edge<V>> action);
 
 	default void forEachEdge(BiConsumer<V, V> action) {
 		if (isDirected()) {
