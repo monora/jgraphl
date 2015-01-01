@@ -12,9 +12,11 @@ import org.jgraphl.edge.Edge;
  * requirement for efficient access to the in-edges of each vertex. This concept
  * is separated from IncidenceGraph because for directed graphs efficient access
  * to in-edges typically requires more storage space, and many algorithms do not
- * require access to in-edges. For undirected graphs this is not an issue, since
- * the inEdges() and outEdges() functions are the same, they both return the
- * edges incident to the vertex.
+ * require access to in-edges.
+ * 
+ * For undirected graphs this is not an issue, since the inEdges() and
+ * outEdges() functions are the same, they both return the edges incident to the
+ * vertex.
  * 
  * @Complexity The inEdges() function is required to be constant time. The
  *             inDegree() and degree() functions must be linear in the number of
@@ -24,7 +26,8 @@ import org.jgraphl.edge.Edge;
  * @param <V>
  *
  */
-public interface BidirectionalGraph<V> extends IncidenceGraph<V> {
+public interface BidirectionalGraph<V> extends IncidenceGraph<V>,
+		DirectedGraph<V> {
 	/**
 	 * Returns a stream providing access to the in-edges (for directed graphs)
 	 * or incident edges (for undirected graphs) of vertex u in graph g. For

@@ -40,8 +40,10 @@ public interface Graph<V> extends Iterable<V> {
 		return stream().count();
 	}
 
-	void forEachAdjacentVertex(V v, Consumer<? super V> action);
-
+	public default void forEachAdjacentVertex(V vertex, Consumer<? super V> action) {
+		adjacentVertices(vertex).forEach(u -> action.accept(u));
+	}
+	
 	/**
 	 * @param v
 	 * @return an iterator providing access to the vertices adjacent to vertex v

@@ -25,7 +25,7 @@ import java.util.stream.Stream;
  *        behavior of the outEdges() function, and access a range that may
  *        include an adjacent vertex more than once.
  */
-public interface AdjacenyGraph<V> extends Graph<V> {
+public interface AdjacencyGraph<V> extends Graph<V> {
 
 	Stream<V> adjacentVertices(V v);
 }
