@@ -46,7 +46,7 @@ public abstract class AbstractAdjacencyGraph<V> implements Graph<V> {
 	}
 
 	@Override
-	public Stream<V> streamOfNeighbors(V v) {
+	public Stream<V> adjacentVertices(V v) {
 		return getNeighborsOf(v).stream();
 	}
 

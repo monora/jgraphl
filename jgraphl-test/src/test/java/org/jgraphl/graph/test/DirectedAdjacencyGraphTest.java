@@ -49,8 +49,8 @@ public class DirectedAdjacencyGraphTest {
 
 	@Test
 	public void testStreamOfNeighbors() {
-		assertThat(graphUnderTest.streamOfNeighbors(1).count(), is(1L));
-		assertThat(graphUnderTest.streamOfNeighbors(1).findFirst().get(), is(2));
+		assertThat(graphUnderTest.adjacentVertices(1).count(), is(1L));
+		assertThat(graphUnderTest.adjacentVertices(1).findFirst().get(), is(2));
 	}
 	
 	@Test

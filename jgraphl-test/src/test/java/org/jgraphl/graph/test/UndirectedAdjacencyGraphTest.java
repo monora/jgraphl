@@ -51,9 +51,9 @@ public class UndirectedAdjacencyGraphTest {
 
 	@Test
 	public void testStreamOfNeighbors() {
-		assertThat(graphUnderTest.streamOfNeighbors(1).count(), is(2L));
+		assertThat(graphUnderTest.adjacentVertices(1).count(), is(2L));
 		int[] neighborsOf1 = {0,2};
-		assertThat(graphUnderTest.streamOfNeighbors(1).sorted().toArray(), is(neighborsOf1));
+		assertThat(graphUnderTest.adjacentVertices(1).sorted().toArray(), is(neighborsOf1));
 	}
 
 	@Test

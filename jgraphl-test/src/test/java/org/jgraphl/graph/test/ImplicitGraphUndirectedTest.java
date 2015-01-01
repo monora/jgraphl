@@ -46,7 +46,7 @@ public class ImplicitGraphUndirectedTest {
 			graph.forEachAdjacentVertex(v,
 					u -> assertTrue("v must not be adjacent to itself", v != u));
 			assertEquals("Each vertex has n-1 neighbors", n, graph
-					.streamOfNeighbors(v).count());
+					.adjacentVertices(v).count());
 		}
 	}
 

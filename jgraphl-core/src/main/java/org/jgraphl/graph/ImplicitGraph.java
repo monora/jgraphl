@@ -37,11 +37,11 @@ public class ImplicitGraph<V> implements Graph<V> {
 
 	@Override
 	public void forEachAdjacentVertex(V vertex, Consumer<? super V> action) {
-		streamOfNeighbors(vertex).forEach(u -> action.accept(u));
+		adjacentVertices(vertex).forEach(u -> action.accept(u));
 	}
 
 	@Override
-	public Stream<V> streamOfNeighbors(V v) {
+	public Stream<V> adjacentVertices(V v) {
 		return neighborStreamSupplier.apply(v);
 	}
 
