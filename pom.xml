@@ -162,6 +162,34 @@
 					<windowtitle>API for ${project.name} (${project.version})</windowtitle>
 					<show>public</show>
 					<quiet>true</quiet>
+					<tags>
+						<!-- Pre- and Postconditions for constructors and methods -->
+						<tag>
+							<name>Pre</name>
+							<placement>cm</placement>
+							<head>Precondition:</head>
+						</tag>
+						<tag>
+							<name>Post</name>
+							<placement>cm</placement>
+							<head>Postcondition:</head>
+						</tag>
+						<tag>
+							<name>Complexity</name>
+							<placement>tm</placement>
+							<head>Complexity guarantees:</head>
+						</tag>
+						<tag>
+							<name>Design</name>
+							<placement>a</placement>
+							<head>Design Rationale:</head>
+						</tag>
+						<tag>
+							<name>Notes</name>
+							<placement>a</placement>
+							<head>Notes:</head>
+						</tag>
+					</tags>
 				</configuration>
 				<reportSets>
 					<reportSet>
