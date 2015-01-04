@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.jgraphl.Graph;
+import org.jgraphl.IncidenceGraph;
 import org.jgraphl.edge.Edge;
 import org.jgraphl.graph.Graphs;
 import org.junit.Before;
@@ -17,7 +18,7 @@ import org.junit.Test;
 
 public class UndirectedAdjacencyGraphTest {
 
-	private Graph<Integer> graphUnderTest;
+	private IncidenceGraph<Integer> graphUnderTest;
 	private Graph<Integer> cycle;
 
 	@Before
@@ -51,9 +52,9 @@ public class UndirectedAdjacencyGraphTest {
 
 	@Test
 	public void testStreamOfNeighbors() {
-		assertThat(graphUnderTest.streamOfNeighbors(1).count(), is(2L));
+		assertThat(graphUnderTest.outDegree(1), is(2L));
 		int[] neighborsOf1 = {0,2};
-		assertThat(graphUnderTest.streamOfNeighbors(1).sorted().toArray(), is(neighborsOf1));
+		assertThat(graphUnderTest.adjacentVertices(1).sorted().toArray(), is(neighborsOf1));
 	}
 
 	@Test

@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+import org.jgraphl.DirectedGraph;
 import org.jgraphl.Graph;
 import org.jgraphl.MutableGraph;
 
@@ -47,8 +48,8 @@ public final class Graphs {
 	}
 
 	@SafeVarargs
-	public static <T> DirectedAdjacencyGraph<T> asDirectedAdjacencyGraph(T... a) {
-		MutableDirectedAdjacencyGraph<T> result = new MutableDirectedAdjacencyGraph<T>();
+	public static <V> DirectedGraph<V> asDirectedAdjacencyGraph(V... a) {
+		MutableDirectedAdjacencyGraph<V> result = new MutableDirectedAdjacencyGraph<V>();
 		for (int i = 0; i < a.length - 1; i += 2) {
 			result.addEdge(a[i], a[i + 1]);
 		}

@@ -18,15 +18,28 @@ import org.jgraphl.edge.DefaultDirectedEdge;
 import org.jgraphl.edge.DefaultUndirectedEdge;
 import org.jgraphl.edge.Edge;
 
-public interface Graph<V> extends Iterable<V> {
+/**
+ * 
+ * @param <V>
+ *            type of vertices
+ */
+public interface Graph<V> extends Iterable<V>, AdjacencyGraph<V> {
 
 	default void forEachVertex(Consumer<? super V> action) {
 		forEach(action);
 	}
 
-	void forEachAdjacentVertex(V v, Consumer<? super V> action);
+	default Stream<V> stream() {
+		return StreamSupport.stream(spliterator(), false);
+	}
 
-	void forEachAdjacentEdge(V u, Consumer<? super Edge<V>> action);
+	default Set<V> vertices() {
+		return stream().collect(Collectors.toSet());
+	}
+
+	default long noOfVertices() {
+		return stream().count();
+	}
 
 	default void forEachEdge(BiConsumer<V, V> action) {
 		if (isDirected()) {
@@ -37,16 +50,10 @@ public interface Graph<V> extends Iterable<V> {
 		}
 	}
 
-	boolean isDirected();
-
-	default Stream<V> stream() {
-		return StreamSupport.stream(spliterator(), false);
-	}
-
-	Stream<V> streamOfNeighbors(V v);
-
-	default Set<V> vertices() {
-		return stream().collect(Collectors.toSet());
+	default Stream<Edge<V>> edgeStream() {
+		Stream<Edge<V>> result = stream().flatMap(
+				u -> adjacentVertices(u).map(v -> getEdge(u, v)));
+		return isDirected() ? result : result.distinct();
 	}
 
 	default List<Edge<V>> edges() {
@@ -54,6 +61,12 @@ public interface Graph<V> extends Iterable<V> {
 		forEachEdge((u, v) -> result.add(getEdge(u, v)));
 		return result;
 	}
+
+	default long noOfEdges() {
+		return edgeStream().count();
+	}
+
+	boolean isDirected();
 
 	default Edge<V> getEdge(V u, V v) {
 		return edgeSupplier().get().apply(u, v);
@@ -64,16 +77,6 @@ public interface Graph<V> extends Iterable<V> {
 			return () -> (u, v) -> new DefaultDirectedEdge<>(u, v);
 		else
 			return () -> (u, v) -> new DefaultUndirectedEdge<>(u, v);
-	}
-
-	default Stream<Edge<V>> edgeStream() {
-		Stream<Edge<V>> result = stream().flatMap(
-				u -> streamOfNeighbors(u).map(v -> getEdge(u, v)));
-		return isDirected() ? result : result.distinct();
-	}
-
-	default long noOfVertices() {
-		return stream().count();
 	}
 
 	default boolean contains(V v) {
@@ -88,10 +91,6 @@ public interface Graph<V> extends Iterable<V> {
 		return edgeStream().anyMatch(e -> e.equals(edge));
 	}
 
-	default long noOfEdges() {
-		return edgeStream().count();
-	}
-
 	default String str() {
 		return this.getClass().getSimpleName()
 				+ "[V=["
@@ -101,8 +100,9 @@ public interface Graph<V> extends Iterable<V> {
 				+ edgeStream().limit(100).map(v -> v.toString())
 						.collect(Collectors.joining(", ")) + "]]";
 	}
-	
+
 	default String sortedEdgeStreamToString() {
-		return edgeStream().map(Object::toString).sorted().collect(Collectors.joining(","));
+		return edgeStream().map(Object::toString).sorted()
+				.collect(Collectors.joining(","));
 	}
 }

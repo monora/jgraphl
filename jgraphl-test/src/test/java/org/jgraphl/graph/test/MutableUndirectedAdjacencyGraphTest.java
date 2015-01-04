@@ -94,7 +94,7 @@ public class MutableUndirectedAdjacencyGraphTest {
 		graphUnderTest.removeEdge(graphUnderTest.getEdge(3, 0));
 		assertThat("The edge leading to 0 should now be ou.", graphUnderTest.containsEdge(3, 0), is(false));
 		assertThat("Vertex 0 should be an isolated vertex now", graphUnderTest.contains(0), is(true));
-		assertThat("Vertex 0 should be an isolated vertex now", graphUnderTest.streamOfNeighbors(0).count(), is(0L));
+		assertThat("Vertex 0 should be an isolated vertex now", graphUnderTest.adjacentVertices(0).count(), is(0L));
 	}
 	
 }

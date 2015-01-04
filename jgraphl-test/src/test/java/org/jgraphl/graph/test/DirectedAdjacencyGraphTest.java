@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 
 import org.jgraphl.Graph;
+import org.jgraphl.IncidenceGraph;
 import org.jgraphl.edge.Edge;
 import org.jgraphl.graph.Graphs;
 import org.junit.Before;
@@ -15,7 +16,7 @@ import org.junit.Test;
 
 public class DirectedAdjacencyGraphTest {
 
-	private Graph<Integer> graphUnderTest;
+	private IncidenceGraph<Integer> graphUnderTest;
 	private Graph<Integer> cycle;
 
 	@Before
@@ -49,8 +50,8 @@ public class DirectedAdjacencyGraphTest {
 
 	@Test
 	public void testStreamOfNeighbors() {
-		assertThat(graphUnderTest.streamOfNeighbors(1).count(), is(1L));
-		assertThat(graphUnderTest.streamOfNeighbors(1).findFirst().get(), is(2));
+		assertThat(graphUnderTest.outDegree(1), is(1L));
+		assertThat(graphUnderTest.adjacentVertices(1).findFirst().get(), is(2));
 	}
 	
 	@Test
