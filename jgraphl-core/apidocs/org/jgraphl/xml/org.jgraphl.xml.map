@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./XmlWriter.html" title="org.jgraphl.xml.XmlWriter" alt="" coords="16,235,709,365"/>
+<area shape="rect" id="node1" href="./XmlWriter.html" title="&lt;TABLE&gt;" alt="" coords="5,230,720,370"/>
+<area shape="rect" id="node2_1" href="./IndentedWriter.html" title="org.jgraphl.xml.IndentedWriter" alt="" coords="167,11,558,175"/>
+<area shape="rect" id="node2" href="./IndentedWriter.html" title="&lt;TABLE&gt;" alt="" coords="157,6,569,181"/>
+<area shape="rect" id="node3_2" href="./IndentedWriter.WriteException.html" title="org.jgraphl.xml.IndentedWriter.WriteException" alt="" coords="603,55,853,132"/>
+<area shape="rect" id="node3" href="./IndentedWriter.WriteException.html" title="&lt;TABLE&gt;" alt="" coords="593,49,863,137"/>
+<area shape="rect" id="node4_3" href="./IndentedWriter.WriteAction.html" title="org.jgraphl.xml.IndentedWriter.WriteAction" alt="" coords="898,46,987,141"/>
+<area shape="rect" id="node4" href="./IndentedWriter.WriteAction.html" title="&lt;TABLE&gt;" alt="" coords="887,41,998,146"/>
+</map>
