@@ -5,7 +5,7 @@ import org.jgraphl.edge.Edge;
 /**
  * A MutableGraph can be changed via the addition or removal of edges and
  * vertices.
- * 
+ *
  * @param <V>
  */
 public interface MutableGraph<V> extends Graph<V> {
@@ -21,7 +21,7 @@ public interface MutableGraph<V> extends Graph<V> {
 	 * will appear in the out-edges of u and (u,v) (or equivalently (v,u)) will
 	 * appear in the out-edges of v. Put another way, v will be adjacent to u
 	 * and u will be adjacent to v.
-	 * 
+	 *
 	 * @param u
 	 * @param v
 	 * @return this graph
@@ -30,7 +30,7 @@ public interface MutableGraph<V> extends Graph<V> {
 
 	/**
 	 * Insert edge e into the graph.
-	 * 
+	 *
 	 * @param e
 	 * @return this graph
 	 */
@@ -40,11 +40,11 @@ public interface MutableGraph<V> extends Graph<V> {
 
 	/**
 	 * Remove u from the vertex set of the graph.
-	 * 
+	 *
 	 * @Pre u is a valid vertex of g.
 	 * @Post num_vertices(g) is one less, u no longer appears in the vertex set
 	 *       of the graph.
-	 * 
+	 *
 	 * @param u
 	 * @return this graph
 	 */
@@ -53,9 +53,9 @@ public interface MutableGraph<V> extends Graph<V> {
 	/**
 	 * Remove the edge(u,v) from the graph. If the graph allows parallel edges
 	 * this remove all occurrences of (u,v).
-	 * 
+	 *
 	 * @Post (u,v) is no longer in the edge set for the graph.
-	 * 
+	 *
 	 * @param u
 	 * @param v
 	 * @return this graph
@@ -64,8 +64,8 @@ public interface MutableGraph<V> extends Graph<V> {
 
 	/**
 	 * Remove the edge e from the graph.
-	 * 
-	 * @post e is no longer in the edge set for the graph. 
+	 *
+	 * @Post e is no longer in the edge set for the graph.
 	 * @param e
 	 * @return this graph
 	 */
