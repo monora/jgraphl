@@ -10,7 +10,7 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.jgraphl.edge.DefaultUndirectedEdge<V>
-	c380 [label=<<table title="org.jgraphl.edge.DefaultUndirectedEdge" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DefaultUndirectedEdge.html">
+	c469 [label=<<table title="org.jgraphl.edge.DefaultUndirectedEdge" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./DefaultUndirectedEdge.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> DefaultUndirectedEdge&lt;V&gt; </td></tr>
 		</table></td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./DefaultUndirectedEdge.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.edge.UndirectedEdge<V>
-	c381 [label=<<table title="org.jgraphl.edge.UndirectedEdge" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./UndirectedEdge.html">
+	c470 [label=<<table title="org.jgraphl.edge.UndirectedEdge" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./UndirectedEdge.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> UndirectedEdge&lt;V&gt; </td></tr>
@@ -38,7 +38,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./UndirectedEdge.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.edge.DefaultDirectedEdge<V>
-	c382 [label=<<table title="org.jgraphl.edge.DefaultDirectedEdge" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DefaultDirectedEdge.html">
+	c471 [label=<<table title="org.jgraphl.edge.DefaultDirectedEdge" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DefaultDirectedEdge.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> DefaultDirectedEdge&lt;V&gt; </td></tr>
 		</table></td></tr>
@@ -57,8 +57,8 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./DefaultDirectedEdge.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.jgraphl.edge.DefaultUndirectedEdge<V> extends org.jgraphl.edge.DefaultDirectedEdge<V>
-	c382:p -> c380:p [dir=back,arrowtail=empty];
+	c471:p -> c469:p [dir=back,arrowtail=empty];
 	//org.jgraphl.edge.DefaultUndirectedEdge<V> implements org.jgraphl.edge.UndirectedEdge<V>
-	c381:p -> c380:p [dir=back,arrowtail=empty,style=dashed];
+	c470:p -> c469:p [dir=back,arrowtail=empty,style=dashed];
 }
 

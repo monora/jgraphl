@@ -10,7 +10,7 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.jgraphl.xml.IndentedWriter.WriteException
-	c908 [label=<<table title="org.jgraphl.xml.IndentedWriter.WriteException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./IndentedWriter.WriteException.html">
+	c1066 [label=<<table title="org.jgraphl.xml.IndentedWriter.WriteException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./IndentedWriter.WriteException.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> WriteException </td></tr>
 		</table></td></tr>
@@ -22,9 +22,9 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./IndentedWriter.WriteException.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.jgraphl.xml.IndentedWriter.WriteException extends java.lang.RuntimeException
-	c937:p -> c908:p [dir=back,arrowtail=empty];
+	c1097:p -> c1066:p [dir=back,arrowtail=empty];
 	// java.lang.RuntimeException
-	c937 [label=<<table title="java.lang.RuntimeException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/RuntimeException.html">
+	c1097 [label=<<table title="java.lang.RuntimeException" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/RuntimeException.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> RuntimeException </td></tr>
 		</table></td></tr>

@@ -4,4 +4,5 @@ org.jgraphl.export
 org.jgraphl.export.dot
 org.jgraphl.export.graphml
 org.jgraphl.graph
+org.jgraphl.graph.traversal
 org.jgraphl.xml

@@ -10,7 +10,7 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.jgraphl.Graph<V>
-	c768 [label=<<table title="org.jgraphl.Graph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../Graph.html">
+	c916 [label=<<table title="org.jgraphl.Graph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="../Graph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> Graph&lt;V&gt; </td></tr>
@@ -38,7 +38,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="../Graph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.graph.ImplicitGraph<V>
-	c777 [label=<<table title="org.jgraphl.graph.ImplicitGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./ImplicitGraph.html">
+	c927 [label=<<table title="org.jgraphl.graph.ImplicitGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./ImplicitGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> ImplicitGraph&lt;V&gt; </td></tr>
 		</table></td></tr>
@@ -56,6 +56,6 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./ImplicitGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.jgraphl.graph.ImplicitGraph<V> implements org.jgraphl.Graph<V>
-	c768:p -> c777:p [dir=back,arrowtail=empty,style=dashed];
+	c916:p -> c927:p [dir=back,arrowtail=empty,style=dashed];
 }
 

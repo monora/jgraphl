@@ -10,7 +10,7 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.jgraphl.export.graphml.GraphML<V>
-	c34 [label=<<table title="org.jgraphl.export.graphml.GraphML" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GraphML.html">
+	c36 [label=<<table title="org.jgraphl.export.graphml.GraphML" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./GraphML.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> GraphML&lt;V&gt; </td></tr>
 		</table></td></tr>
