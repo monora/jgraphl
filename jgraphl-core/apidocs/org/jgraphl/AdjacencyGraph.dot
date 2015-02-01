@@ -10,7 +10,7 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.jgraphl.AdjacencyGraph<V>
-	c335 [label=<<table title="org.jgraphl.AdjacencyGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AdjacencyGraph.html">
+	c355 [label=<<table title="org.jgraphl.AdjacencyGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./AdjacencyGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> AdjacencyGraph&lt;V&gt; </td></tr>
@@ -24,7 +24,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./AdjacencyGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.Graph<V>
-	c338 [label=<<table title="org.jgraphl.Graph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Graph.html">
+	c358 [label=<<table title="org.jgraphl.Graph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Graph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> Graph&lt;V&gt; </td></tr>
@@ -52,6 +52,6 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./Graph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.jgraphl.Graph<V> implements org.jgraphl.AdjacencyGraph<V>
-	c335:p -> c338:p [dir=back,arrowtail=empty,style=dashed];
+	c355:p -> c358:p [dir=back,arrowtail=empty,style=dashed];
 }
 

@@ -10,7 +10,7 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.jgraphl.export.ExportFormat<V>
-	c69 [label=<<table title="org.jgraphl.export.ExportFormat" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ExportFormat.html">
+	c73 [label=<<table title="org.jgraphl.export.ExportFormat" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ExportFormat.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"><font face="Helvetica-Oblique"> ExportFormat&lt;V&gt; </font></td></tr>
 		</table></td></tr>
@@ -25,7 +25,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./ExportFormat.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.export.ExportFormat.Factory<V>
-	c70 [label=<<table title="org.jgraphl.export.ExportFormat.Factory" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ExportFormat.Factory.html">
+	c74 [label=<<table title="org.jgraphl.export.ExportFormat.Factory" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ExportFormat.Factory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> Factory&lt;V&gt; </td></tr>
@@ -38,7 +38,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./ExportFormat.Factory.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.export.ExportFormat.LabelProvider<V>
-	c71 [label=<<table title="org.jgraphl.export.ExportFormat.LabelProvider" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ExportFormat.LabelProvider.html">
+	c75 [label=<<table title="org.jgraphl.export.ExportFormat.LabelProvider" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ExportFormat.LabelProvider.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> LabelProvider&lt;V&gt; </td></tr>

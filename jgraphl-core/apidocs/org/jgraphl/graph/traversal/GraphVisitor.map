@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node1_0" href="./BfsIterator.html" title="org.jgraphl.graph.traversal.BfsIterator" alt="" coords="126,475,343,605"/>
-<area shape="rect" id="node1" href="./BfsIterator.html" title="&lt;TABLE&gt;" alt="" coords="115,470,354,610"/>
+<area shape="rect" id="node1_0" href="./TraversalIterator.html" title="org.jgraphl.graph.traversal.TraversalIterator" alt="" coords="109,475,360,605"/>
+<area shape="rect" id="node1" href="./TraversalIterator.html" title="&lt;TABLE&gt;" alt="" coords="99,470,371,610"/>
 <area shape="rect" id="node2_1" href="./GraphVisitor.html" title="org.jgraphl.graph.traversal.GraphVisitor" alt="" coords="16,217,453,415"/>
 <area shape="rect" id="node2" href="./GraphVisitor.html" title="&lt;TABLE&gt;" alt="" coords="5,211,464,421"/>
 <area shape="rect" id="node3_2" href="http://java.sun.com/j2se/1.4.2/docs/api/java/util/Iterator.html" title="java.util.Iterator" alt="" coords="101,11,369,157"/>

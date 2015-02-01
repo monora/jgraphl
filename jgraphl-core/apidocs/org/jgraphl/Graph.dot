@@ -10,7 +10,7 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.jgraphl.UndirectedGraph<V>
-	c749 [label=<<table title="org.jgraphl.UndirectedGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./UndirectedGraph.html">
+	c829 [label=<<table title="org.jgraphl.UndirectedGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./UndirectedGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> UndirectedGraph&lt;V&gt; </td></tr>
@@ -23,7 +23,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./UndirectedGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.IncidenceGraph<V>
-	c750 [label=<<table title="org.jgraphl.IncidenceGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./IncidenceGraph.html">
+	c830 [label=<<table title="org.jgraphl.IncidenceGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./IncidenceGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> IncidenceGraph&lt;V&gt; </td></tr>
@@ -38,7 +38,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./IncidenceGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.AdjacencyGraph<V>
-	c751 [label=<<table title="org.jgraphl.AdjacencyGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AdjacencyGraph.html">
+	c831 [label=<<table title="org.jgraphl.AdjacencyGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./AdjacencyGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> AdjacencyGraph&lt;V&gt; </td></tr>
@@ -52,7 +52,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./AdjacencyGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.MutableGraph<V>
-	c752 [label=<<table title="org.jgraphl.MutableGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MutableGraph.html">
+	c832 [label=<<table title="org.jgraphl.MutableGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MutableGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> MutableGraph&lt;V&gt; </td></tr>
@@ -70,7 +70,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./MutableGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.Graph<V>
-	c754 [label=<<table title="org.jgraphl.Graph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Graph.html">
+	c834 [label=<<table title="org.jgraphl.Graph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./Graph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> Graph&lt;V&gt; </td></tr>
@@ -98,7 +98,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./Graph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.DirectedGraph<V>
-	c755 [label=<<table title="org.jgraphl.DirectedGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DirectedGraph.html">
+	c835 [label=<<table title="org.jgraphl.DirectedGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./DirectedGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> DirectedGraph&lt;V&gt; </td></tr>
@@ -112,7 +112,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./DirectedGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.graph.ImplicitGraph<V>
-	c765 [label=<<table title="org.jgraphl.graph.ImplicitGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./graph/ImplicitGraph.html">
+	c847 [label=<<table title="org.jgraphl.graph.ImplicitGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./graph/ImplicitGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> ImplicitGraph&lt;V&gt; </td></tr>
 		</table></td></tr>
@@ -130,21 +130,21 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./graph/ImplicitGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.jgraphl.UndirectedGraph<V> implements org.jgraphl.Graph<V>
-	c754:p -> c749:p [dir=back,arrowtail=empty,style=dashed];
+	c834:p -> c829:p [dir=back,arrowtail=empty,style=dashed];
 	//org.jgraphl.IncidenceGraph<V> implements org.jgraphl.Graph<V>
-	c754:p -> c750:p [dir=back,arrowtail=empty,style=dashed];
+	c834:p -> c830:p [dir=back,arrowtail=empty,style=dashed];
 	//org.jgraphl.MutableGraph<V> implements org.jgraphl.Graph<V>
-	c754:p -> c752:p [dir=back,arrowtail=empty,style=dashed];
+	c834:p -> c832:p [dir=back,arrowtail=empty,style=dashed];
 	//org.jgraphl.Graph<V> implements java.lang.Iterable<T>
-	c772:p -> c754:p [dir=back,arrowtail=empty,style=dashed];
+	c854:p -> c834:p [dir=back,arrowtail=empty,style=dashed];
 	//org.jgraphl.Graph<V> implements org.jgraphl.AdjacencyGraph<V>
-	c751:p -> c754:p [dir=back,arrowtail=empty,style=dashed];
+	c831:p -> c834:p [dir=back,arrowtail=empty,style=dashed];
 	//org.jgraphl.DirectedGraph<V> implements org.jgraphl.Graph<V>
-	c754:p -> c755:p [dir=back,arrowtail=empty,style=dashed];
+	c834:p -> c835:p [dir=back,arrowtail=empty,style=dashed];
 	//org.jgraphl.graph.ImplicitGraph<V> implements org.jgraphl.Graph<V>
-	c754:p -> c765:p [dir=back,arrowtail=empty,style=dashed];
+	c834:p -> c847:p [dir=back,arrowtail=empty,style=dashed];
 	// java.lang.Iterable<T>
-	c772 [label=<<table title="java.lang.Iterable" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Iterable.html">
+	c854 [label=<<table title="java.lang.Iterable" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Iterable.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> Iterable&lt;T&gt; </td></tr>

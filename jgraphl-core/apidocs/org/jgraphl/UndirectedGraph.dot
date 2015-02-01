@@ -10,7 +10,7 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.jgraphl.UndirectedGraph<V>
-	c1267 [label=<<table title="org.jgraphl.UndirectedGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./UndirectedGraph.html">
+	c1413 [label=<<table title="org.jgraphl.UndirectedGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./UndirectedGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> UndirectedGraph&lt;V&gt; </td></tr>
@@ -23,7 +23,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./UndirectedGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.Graph<V>
-	c1272 [label=<<table title="org.jgraphl.Graph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Graph.html">
+	c1418 [label=<<table title="org.jgraphl.Graph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Graph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> Graph&lt;V&gt; </td></tr>
@@ -51,7 +51,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./Graph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.graph.MutableUndirectedAdjacencyGraph<V>
-	c1286 [label=<<table title="org.jgraphl.graph.MutableUndirectedAdjacencyGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./graph/MutableUndirectedAdjacencyGraph.html">
+	c1434 [label=<<table title="org.jgraphl.graph.MutableUndirectedAdjacencyGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./graph/MutableUndirectedAdjacencyGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> MutableUndirectedAdjacencyGraph&lt;V&gt; </td></tr>
 		</table></td></tr>
@@ -69,7 +69,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./graph/MutableUndirectedAdjacencyGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.graph.UndirectedAdjacencyGraph<V>
-	c1287 [label=<<table title="org.jgraphl.graph.UndirectedAdjacencyGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./graph/UndirectedAdjacencyGraph.html">
+	c1435 [label=<<table title="org.jgraphl.graph.UndirectedAdjacencyGraph" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./graph/UndirectedAdjacencyGraph.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> UndirectedAdjacencyGraph&lt;V&gt; </td></tr>
 		</table></td></tr>
@@ -83,12 +83,12 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./graph/UndirectedAdjacencyGraph.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.jgraphl.UndirectedGraph<V> implements org.jgraphl.Graph<V>
-	c1272:p -> c1267:p [dir=back,arrowtail=empty,style=dashed];
+	c1418:p -> c1413:p [dir=back,arrowtail=empty,style=dashed];
 	//org.jgraphl.graph.MutableUndirectedAdjacencyGraph<V> extends org.jgraphl.graph.UndirectedAdjacencyGraph<V>
-	c1287:p -> c1286:p [dir=back,arrowtail=empty];
+	c1435:p -> c1434:p [dir=back,arrowtail=empty];
 	//org.jgraphl.graph.MutableUndirectedAdjacencyGraph<V> implements org.jgraphl.UndirectedGraph<V>
-	c1267:p -> c1286:p [dir=back,arrowtail=empty,style=dashed];
+	c1413:p -> c1434:p [dir=back,arrowtail=empty,style=dashed];
 	//org.jgraphl.graph.UndirectedAdjacencyGraph<V> implements org.jgraphl.UndirectedGraph<V>
-	c1267:p -> c1287:p [dir=back,arrowtail=empty,style=dashed];
+	c1413:p -> c1435:p [dir=back,arrowtail=empty,style=dashed];
 }
 

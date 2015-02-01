@@ -10,7 +10,7 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.jgraphl.xml.XmlWriter
-	c998 [label=<<table title="org.jgraphl.xml.XmlWriter" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./XmlWriter.html">
+	c1094 [label=<<table title="org.jgraphl.xml.XmlWriter" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./XmlWriter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> XmlWriter </td></tr>
 		</table></td></tr>
@@ -25,7 +25,7 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./XmlWriter.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.jgraphl.xml.IndentedWriter
-	c999 [label=<<table title="org.jgraphl.xml.IndentedWriter" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./IndentedWriter.html">
+	c1095 [label=<<table title="org.jgraphl.xml.IndentedWriter" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./IndentedWriter.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> IndentedWriter </td></tr>
 		</table></td></tr>
@@ -42,11 +42,11 @@ digraph G {
 		</table></td></tr>
 		</table>>, URL="./IndentedWriter.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.jgraphl.xml.XmlWriter extends org.jgraphl.xml.IndentedWriter
-	c999:p -> c998:p [dir=back,arrowtail=empty];
+	c1095:p -> c1094:p [dir=back,arrowtail=empty];
 	//org.jgraphl.xml.IndentedWriter implements java.io.Closeable
-	c1031:p -> c999:p [dir=back,arrowtail=empty,style=dashed];
+	c1129:p -> c1095:p [dir=back,arrowtail=empty,style=dashed];
 	// java.io.Closeable
-	c1031 [label=<<table title="java.io.Closeable" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/Closeable.html">
+	c1129 [label=<<table title="java.io.Closeable" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/java/io/Closeable.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> Closeable </td></tr>
