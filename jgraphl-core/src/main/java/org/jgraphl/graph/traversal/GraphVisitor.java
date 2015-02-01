@@ -1,9 +1,5 @@
 package org.jgraphl.graph.traversal;
 
-import static org.jgraphl.graph.traversal.GraphVisitor.VisitColor.GRAY;
-
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.function.BiConsumer;
@@ -39,8 +35,6 @@ public abstract class GraphVisitor<V> implements Iterator<V> {
 
 	protected final Graph<V> graph;
 	protected final HashMap<V, VisitColor> colorMap = new HashMap<>();
-
-	protected final Deque<V> queue = new ArrayDeque<V>();
 
 	// Initialize listeners with no ops
 	private Consumer<V> examineVertexListener = v -> {
@@ -117,10 +111,5 @@ public abstract class GraphVisitor<V> implements Iterator<V> {
 	// coloring
 	protected void setVisitColor(V v, VisitColor color) {
 		colorMap.put(v, color);
-	}
-
-	protected void discoverVertex(final V v) {
-		setVisitColor(v, GRAY);
-		queue.push(v);
 	}
 }
