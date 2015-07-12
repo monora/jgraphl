@@ -10,7 +10,7 @@ import org.jgraphl.Graph;
 import org.jgraphl.graph.DirectedAdjacencyGraph;
 import org.junit.Before;
 
-public class TraversalTest {
+public abstract class TraversalTest {
 
 	protected Graph<Integer> digraph;
 	protected int startVertex = 1;
