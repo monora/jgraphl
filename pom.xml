@@ -10,7 +10,7 @@
 
 	<groupId>org.jgraphl</groupId>
 	<artifactId>jgraphl-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>Java Graph Library Parent</name>
 	<description>A Java class library for graph data structures and algorithms.</description>
 	<packaging>pom</packaging>
@@ -49,8 +49,22 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
+		<java.version>11</java.version>
+    <compiler.version>3.8.1</compiler.version>
+
+		<javadoc.version>3.2.0</javadoc.version>
+    <doclint>none</doclint>
+
+    <info-reports.version>3.1.1</info-reports.version>
+    <scm.version>1.11.2</scm.version>
+    <scm-publish.version>3.0.0</scm-publish.version>
+    <site.version>3.9.1</site.version>
+    <surefire.version>3.0.0-M5</surefire.version>
+    <release.version>3.0.0-M1</release.version>
+    <versions.version>2.8.1</versions.version>
+    <umldoclet.version>2.0.12</umldoclet.version>
+    <doxia.version>1.9.1</doxia.version>
+
 	</properties>
 
 	<dependencyManagement>
@@ -72,10 +86,19 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>${versions.version}</version>
+          <configuration>
+            <generateBackupPoms>false</generateBackupPoms>
+          </configuration>
+        </plugin>
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.2</version>
+					<version>${compiler.version}</version>
 					<configuration>
 						<source>${java.version}</source>
 						<target>${java.version}</target>
@@ -84,7 +107,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.12</version>
+					<version>${surefire.version}</version>
 					<configuration>
 						<testFailureIgnore>false</testFailureIgnore>
 					</configuration>
@@ -92,6 +115,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
+          <version>${release.version}</version>
 					<configuration>
 						<mavenExecutorId>forked-path</mavenExecutorId>
 					</configuration>
@@ -99,28 +123,25 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>${maven-javadoc-plugin.version}</version>
+					<version>${javadoc.version}</version>
 					<executions>
 						<execution>
 							<id>attach-javadocs</id>
 							<goals>
 								<goal>jar</goal>
 							</goals>
-							<configuration>
-								<additionalparam>-Xdoclint:none</additionalparam>
-							</configuration>
 						</execution>
 					</executions>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-scm-plugin</artifactId>
-					<version>1.9.2</version>
+					<version>${scm.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-scm-publish-plugin</artifactId>
-					<version>1.1</version>
+					<version>${scm-publish.version}</version>
 					<configuration>
 						<scmBranch>gh-pages</scmBranch>
 					</configuration>
@@ -129,7 +150,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
-					<version>3.4</version>
+					<version>${site.version}</version>
 					<configuration>
 						<skipDeploy>true</skipDeploy>
 						<!-- We are deploying site using scm-publish, not site-deploy... -->
@@ -138,7 +159,7 @@
 						<dependency>
 							<groupId>org.apache.maven.doxia</groupId>
 							<artifactId>doxia-module-markdown</artifactId>
-							<version>1.5</version>
+							<version>${doxia.version}</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -156,7 +177,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven-javadoc-plugin.version}</version>
+				<version>${javadoc.version}</version>
 				<configuration>
 					<doctitle>API for ${project.name} (${project.version})</doctitle>
 					<windowtitle>API for ${project.name} (${project.version})</windowtitle>
@@ -190,14 +211,15 @@
 							<head>Notes:</head>
 						</tag>
 					</tags>
-					<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
-					<docletArtifact>
-						<groupId>org.umlgraph</groupId>
-						<artifactId>umlgraph</artifactId>
-						<version>5.6.6</version>
-					</docletArtifact>
-					<additionalparam>-views -all</additionalparam>
-					<useStandardDocletOptions>true</useStandardDocletOptions>
+
+          <doclet>nl.talsmasoftware.umldoclet.UMLDoclet</doclet>
+          <docletArtifact>
+            <groupId>nl.talsmasoftware</groupId>
+            <artifactId>umldoclet</artifactId>
+            <version>${umldoclet.version}</version>
+          </docletArtifact>
+          <useStandardDocletOptions>true</useStandardDocletOptions>
+          
 				</configuration>
 				<reportSets>
 					<reportSet>
@@ -211,12 +233,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.7</version>
+				<version>${info-reports.version}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
-				<version>2.1</version>
+				<version>${versions.version}</version>
 			</plugin>
 		</plugins>
 	</reporting>

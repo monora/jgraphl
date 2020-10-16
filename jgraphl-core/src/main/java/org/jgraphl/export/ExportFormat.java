@@ -20,7 +20,7 @@ import org.jgraphl.Graph;
  * Convert resulting file to svg with
  * <p>
  * <code>
- * dot -Tsvg file.dot > file.svg
+ * dot -Tsvg file.dot &gt; file.svg
  * </code>
  * 
  * @author ThorstenSeitz
